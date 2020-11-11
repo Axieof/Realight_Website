@@ -32,7 +32,8 @@ a {
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
-  font-size: 14px;
+    font-size: 14px;
+    font-family: 'Reem Kufi', sans-serif;
 }
 @media (min-width: 768px) {
   html {
@@ -67,6 +68,7 @@ body {
     /* Margin bottom by footer height */
     margin-bottom: 60px;
     background: #020712;
+    font-family: 'Reem Kufi', sans-serif;
 }
 .footer {
   position: absolute;
@@ -74,4 +76,22 @@ body {
   width: 100%;
   white-space: nowrap;
   line-height: 60px; /* Vertically center the text there */
+}
+
+/*HomePage CSS*/
+
+.HomepageLogo {
+    width: 20%;
+    height:20%;
+    padding-top:190px;
+}
+
+.search-bar{
+    height:40px;
+    width:50%
+}
+
+input{
+    border-radius:10px;
+    text-align:center;
 }
