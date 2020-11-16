@@ -72,3 +72,39 @@ D:\Polytechnic Stuff\Semster 2.2\P2\Realight\Realight_Project\Realight_Website\o
 D:\Polytechnic Stuff\Semster 2.2\P2\Realight\Realight_Project\Realight_Website\obj\Debug\netcoreapp3.1\Realight_Website.pdb
 D:\Polytechnic Stuff\Semster 2.2\P2\Realight\Realight_Project\Realight_Website\obj\Debug\netcoreapp3.1\Realight_Website.genruntimeconfig.cache
 D:\Polytechnic Stuff\Semster 2.2\P2\Realight\Realight_Project\Realight_Website\obj\Debug\netcoreapp3.1\Realight_Website.csproj.CopyComplete
+C:\Users\hjunz\Desktop\Realight\Realight_Website\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\Users\hjunz\Desktop\Realight\Realight_Website\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Users\hjunz\Desktop\Realight\Realight_Website\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+C:\Users\hjunz\Desktop\Realight\Realight_Website\bin\Debug\netcoreapp3.1\Realight_Website.exe
+C:\Users\hjunz\Desktop\Realight\Realight_Website\bin\Debug\netcoreapp3.1\Realight_Website.deps.json
+C:\Users\hjunz\Desktop\Realight\Realight_Website\bin\Debug\netcoreapp3.1\Realight_Website.runtimeconfig.json
+C:\Users\hjunz\Desktop\Realight\Realight_Website\bin\Debug\netcoreapp3.1\Realight_Website.runtimeconfig.dev.json
+C:\Users\hjunz\Desktop\Realight\Realight_Website\bin\Debug\netcoreapp3.1\Realight_Website.dll
+C:\Users\hjunz\Desktop\Realight\Realight_Website\bin\Debug\netcoreapp3.1\Realight_Website.pdb
+C:\Users\hjunz\Desktop\Realight\Realight_Website\bin\Debug\netcoreapp3.1\Realight_Website.Views.dll
+C:\Users\hjunz\Desktop\Realight\Realight_Website\bin\Debug\netcoreapp3.1\Realight_Website.Views.pdb
+C:\Users\hjunz\Desktop\Realight\Realight_Website\obj\Debug\netcoreapp3.1\Realight_Website.csprojAssemblyReference.cache
+C:\Users\hjunz\Desktop\Realight\Realight_Website\obj\Debug\netcoreapp3.1\Realight_Website.AssemblyInfoInputs.cache
+C:\Users\hjunz\Desktop\Realight\Realight_Website\obj\Debug\netcoreapp3.1\Realight_Website.AssemblyInfo.cs
+C:\Users\hjunz\Desktop\Realight\Realight_Website\obj\Debug\netcoreapp3.1\Realight_Website.RazorAssemblyInfo.cache
+C:\Users\hjunz\Desktop\Realight\Realight_Website\obj\Debug\netcoreapp3.1\Realight_Website.RazorAssemblyInfo.cs
+C:\Users\hjunz\Desktop\Realight\Realight_Website\obj\Debug\netcoreapp3.1\Realight_Website.TagHelpers.input.cache
+C:\Users\hjunz\Desktop\Realight\Realight_Website\obj\Debug\netcoreapp3.1\Realight_Website.TagHelpers.output.cache
+C:\Users\hjunz\Desktop\Realight\Realight_Website\obj\Debug\netcoreapp3.1\Realight_Website.RazorCoreGenerate.cache
+C:\Users\hjunz\Desktop\Realight\Realight_Website\obj\Debug\netcoreapp3.1\Razor\Views\Home\Browse.cshtml.g.cs
+C:\Users\hjunz\Desktop\Realight\Realight_Website\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
+C:\Users\hjunz\Desktop\Realight\Realight_Website\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
+C:\Users\hjunz\Desktop\Realight\Realight_Website\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
+C:\Users\hjunz\Desktop\Realight\Realight_Website\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
+C:\Users\hjunz\Desktop\Realight\Realight_Website\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+C:\Users\hjunz\Desktop\Realight\Realight_Website\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
+C:\Users\hjunz\Desktop\Realight\Realight_Website\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
+C:\Users\hjunz\Desktop\Realight\Realight_Website\obj\Debug\netcoreapp3.1\Realight_Website.RazorTargetAssemblyInfo.cache
+C:\Users\hjunz\Desktop\Realight\Realight_Website\obj\Debug\netcoreapp3.1\Realight_Website.RazorTargetAssemblyInfo.cs
+C:\Users\hjunz\Desktop\Realight\Realight_Website\obj\Debug\netcoreapp3.1\Realight_Website.Views.pdb
+C:\Users\hjunz\Desktop\Realight\Realight_Website\obj\Debug\netcoreapp3.1\staticwebassets\Realight_Website.StaticWebAssets.Manifest.cache
+C:\Users\hjunz\Desktop\Realight\Realight_Website\obj\Debug\netcoreapp3.1\staticwebassets\Realight_Website.StaticWebAssets.xml
+C:\Users\hjunz\Desktop\Realight\Realight_Website\obj\Debug\netcoreapp3.1\Realight_Website.dll
+C:\Users\hjunz\Desktop\Realight\Realight_Website\obj\Debug\netcoreapp3.1\Realight_Website.pdb
+C:\Users\hjunz\Desktop\Realight\Realight_Website\obj\Debug\netcoreapp3.1\Realight_Website.genruntimeconfig.cache
+C:\Users\hjunz\Desktop\Realight\Realight_Website\obj\Debug\netcoreapp3.1\Realight_Website.csproj.CopyComplete
