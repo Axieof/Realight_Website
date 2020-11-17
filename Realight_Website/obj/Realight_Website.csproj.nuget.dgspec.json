@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\hjunz\\Desktop\\Realight\\Realight_Website\\Realight_Website.csproj": {}
+    "D:\\Polytechnic Stuff\\Semster 2.2\\P2\\Realight\\Realight_Project\\Realight_Website\\Realight_Website.csproj": {}
   },
   "projects": {
-    "C:\\Users\\hjunz\\Desktop\\Realight\\Realight_Website\\Realight_Website.csproj": {
+    "D:\\Polytechnic Stuff\\Semster 2.2\\P2\\Realight\\Realight_Project\\Realight_Website\\Realight_Website.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\hjunz\\Desktop\\Realight\\Realight_Website\\Realight_Website.csproj",
+        "projectUniqueName": "D:\\Polytechnic Stuff\\Semster 2.2\\P2\\Realight\\Realight_Project\\Realight_Website\\Realight_Website.csproj",
         "projectName": "Realight_Website",
-        "projectPath": "C:\\Users\\hjunz\\Desktop\\Realight\\Realight_Website\\Realight_Website.csproj",
-        "packagesPath": "C:\\Users\\hjunz\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\hjunz\\Desktop\\Realight\\Realight_Website\\obj\\",
+        "projectPath": "D:\\Polytechnic Stuff\\Semster 2.2\\P2\\Realight\\Realight_Project\\Realight_Website\\Realight_Website.csproj",
+        "packagesPath": "C:\\Users\\DannyChan\\.nuget\\packages\\",
+        "outputPath": "D:\\Polytechnic Stuff\\Semster 2.2\\P2\\Realight\\Realight_Project\\Realight_Website\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\hjunz\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\DannyChan\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -44,6 +44,10 @@
             "FireSharp": {
               "target": "Package",
               "version": "[2.0.4, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[3.1.4, )"
             }
           },
           "imports": [

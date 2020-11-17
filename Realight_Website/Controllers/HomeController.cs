@@ -1,17 +1,28 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Web;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using FireSharp;
+using FireSharp.Config;
+using FireSharp.Interfaces;
 using Realight_Website.Models;
+
 
 namespace Realight_Website.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+
+        /*IFirebaseConfig config = new FirebaseConfig
+        {
+            AuthSecret= "qOzvcqVr0tufiu5Ra0I9ZOJ6rKoamkTePy2mRKfi",
+            BasePath= "https://realight-db.firebaseio.com/"
+        };*/
 
         public HomeController(ILogger<HomeController> logger)
         {
@@ -22,6 +33,12 @@ namespace Realight_Website.Controllers
         {
             return View();
         }
+
+        public ActionResult Browse()
+		{
+
+            return View();
+		}
 
         public IActionResult Privacy()
         {
