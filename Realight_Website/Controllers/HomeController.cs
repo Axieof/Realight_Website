@@ -10,7 +10,9 @@ using FireSharp;
 using FireSharp.Config;
 using FireSharp.Interfaces;
 using Realight_Website.Models;
-
+using FireSharp.Response;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace Realight_Website.Controllers
 {
@@ -18,11 +20,12 @@ namespace Realight_Website.Controllers
     {
         private readonly ILogger<HomeController> _logger;
 
-        /*IFirebaseConfig config = new FirebaseConfig
+        IFirebaseConfig config = new FirebaseConfig
         {
             AuthSecret= "qOzvcqVr0tufiu5Ra0I9ZOJ6rKoamkTePy2mRKfi",
             BasePath= "https://realight-db.firebaseio.com/"
-        };*/
+        };
+        FirebaseClient client;
 
         public HomeController(ILogger<HomeController> logger)
         {
@@ -36,8 +39,15 @@ namespace Realight_Website.Controllers
 
         public ActionResult Browse()
 		{
-
-            return View();
+            client = new FirebaseClient(config);
+            FirebaseResponse response = client.Get("Rooms");
+            dynamic data = JsonConvert.DeserializeObject<dynamic>(response.Body);
+            var list = new List<Room>();
+            foreach(var item in data)
+			{
+                list.Add(JsonConvert.DeserializeObject<Room>(((JProperty)item).Value.ToString()));
+			}
+            return View(list);
 		}
 
         public IActionResult Privacy()
