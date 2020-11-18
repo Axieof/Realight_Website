@@ -95,3 +95,52 @@ input{
     border-radius:10px;
     text-align:center;
 }
+
+/*Browse page CSS*/
+.browse-header{
+    justify-content: center;
+}
+
+.browse-container{
+    display: flex;
+    justify-content: center;
+    flex: 2;
+    flex-wrap: wrap;
+    color: #F1F1F1;
+}
+
+
+.map-panel {
+    width: 250px;
+    height: 170px;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 10px;
+    flex-shrink: 0;
+}
+
+.map-header {
+    width: inherit;
+    height: 100px;
+    border-radius: 10px 10px 0 0;
+    background-color: #393B40;
+    background-image: url("/images/demo1.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    padding: 5px;
+    display: flex;
+}
+
+.map-header-info{
+    align-self: flex-end;
+}
+
+.map-info {
+    border-radius: 0 0 10px 10px;
+    width: inherit;
+    height: 4em;
+    background-color: #393B40;
+    padding: 5px;
+    align-content: space-around;
+}
