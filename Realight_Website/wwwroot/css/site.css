@@ -122,40 +122,42 @@ input{
 
 
 /*Browse page CSS*/
-.browse-header{
-    width: 80%;
+.browse-filters {
+    min-width: 450px;
+    padding: 1em;
     margin: 0 auto;
     justify-content: center;
+    background-image: linear-gradient(#463266, #24272E);
+    color: #F1F1F1;
 }
 
-.browse-container{
-    width: 80%;
-    min-width: 500px;
+.browse-container {
+    min-width: 450px;
+    padding-bottom: 5em;
     margin: 0 auto;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-self: center;
     flex: 2;
     flex-wrap: wrap;
     color: #F1F1F1;
-    background-color: #393B40;
+    background-color: #24272E;
 }
 
 
 .map-panel {
-    max-width: 420px;
     height: 170px;
     padding: 5px;
     margin: 5px;
     border-radius: 10px;
-    flex-shrink: 0;
     align-self: center;
     justify-content: space-around;
 }
 
 .map-header {
-    width: 410px;
-    height: 100px;
+    width: 425px;
+    min-width: 180px;
+    height: 128px;
     border-radius: 10px 10px 0 0;
     background-color: #393B40;
     background-image: url("/images/placeholder-header.jpg");
@@ -166,23 +168,71 @@ input{
 }
 
 .map-header-info{
-    padding: 5px;
+    font-size: small;
+    padding: 0 0 7px 10px;
     align-self: flex-end;
+}
+
+#title {
+    font-size: x-large;
+    line-height: 90%;
 }
 
 .map-info {
     border-radius: 0 0 10px 10px;
-    width: 410px;
-    height: 4em;
-    background-color: #020712;
-    padding: 5px;
-    align-content: space-around;
+    width: 425px;
+    min-width: 180px;
+    background-color: #393B40;
+    padding: 8px 10px 8px 5px;
     display: flex;
+    justify-content: space-between;
+}
+
+.tag-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .tag{
-    width: 5em;
-    height: 2em;
+    width: 4em;
+    height: 1em;
+    margin: 0 5px 0 5px;
     border-radius: 10px;
     background-color: orange;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.player-count {
+    width: 3.8em;
+    height: 2em;
+    border-radius: 20px;
+    background-color: #393B40;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.player-count span{
+    vertical-align: middle;
+    margin-right: 2px;
+}
+
+#person {
+    width: 1.5em;
+    height: auto;
+}
+
+.link {
+}
+
+#link {
+    width: 1.2em;
+    height: auto;
 }

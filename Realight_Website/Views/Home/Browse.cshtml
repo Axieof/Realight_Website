@@ -4,44 +4,43 @@
     ViewData["Title"] = "Browse";
 }
 
-<div class="browse-header">
-    <h1>Browse</h1>
-    <p>
-        <a asp-action="Create">Create New</a>
-    </p>
+<div class="row">
+    <div class="col-1"></div>
+    <div class="col-10 browse-filters">Sort by:</div>
+    <div class="col-1"></div>
 </div>
 
 
-<div class="browse-container">
-    @foreach (var item in Model)
-    {
-    <div class="map-panel" href="">
-        <div class="map-header">
-            <div class="map-header-info">@Html.DisplayFor(modelItem => item.name)</div>
-        </div>
-        <div class="map-info">
-            @Html.DisplayFor(modelItem => item.code)<br />
-            @Html.DisplayFor(modelItem => item.mapURL)
-            @Html.DisplayFor(modelItem => item.playerCount)
-            @Html.DisplayFor(modelItem => item.imgURL)
-            <div class="tag-container">
-                @for (int i = 0; i < item.interestTag.Count(); i++)
-                {
-                    <div class="tag">@Html.DisplayFor(modelItem => item.interestTag[i])</div>
-                }
+<div class="row">
+    <div class="col-1"></div>
+    <div class="browse-container col-10">
+        @foreach (var item in Model)
+        {
+            <div class="map-panel" href="">
+                <div class="map-header">
+                    <div class="map-header-info">
+                        <div id="title">@Html.DisplayFor(modelItem => item.name)</div>
+                        @Html.DisplayFor(modelItem => item.ownername)
+                    <div class="player-count">
+                        <img id="person" src="~/images/whiteperson.png" />
+                        <span>@Html.DisplayFor(modelItem => item.playerCount)</span>
+                    </div>
+                    </div>
+                </div>
+                <div class="map-info">
+                    <div class="tag-container">
+                        @for (int i = 0; i < item.interestTag.Count(); i++)
+                        {
+                            <div class="tag">@Html.DisplayFor(modelItem => item.interestTag[i])</div>
+                        }
+                    </div>
+                    <div class="link"><a href=""><img id="link" src="~/images/link.png" /></a></div>
+                </div>
             </div>
-
-
-            <!--
-    <div class="maps-actions">
-    @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-    </div>-->
-        </div>
+        }
     </div>
 
-    }
+    <div class="col-1"></div>
 </div>
 
 
