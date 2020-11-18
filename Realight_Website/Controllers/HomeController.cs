@@ -13,6 +13,7 @@ using Realight_Website.Models;
 using FireSharp.Response;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using Microsoft.AspNetCore.Http;
 
 namespace Realight_Website.Controllers
 {
@@ -34,19 +35,35 @@ namespace Realight_Website.Controllers
 
         public IActionResult Index()
         {
+            HttpContext.Session.SetString("HomePage", "BackgroundVideo");
             return View();
         }
 
-        public ActionResult Browse()
-		{
+        [HttpGet]
+        public async Task<IActionResult> Browse(string? searchString)
+        {
+            //Use searchString as the input and use it to identify any similar interest tag
+            HttpContext.Session.SetString("HomePage", "Default");
+
+            ViewData["CurrentFilter"] = searchString;
+
+            
+
             client = new FirebaseClient(config);
             FirebaseResponse response = client.Get("Rooms");
             dynamic data = JsonConvert.DeserializeObject<dynamic>(response.Body);
             var list = new List<Room>();
-            foreach(var item in data)
-			{
+     
+            foreach (var item in data)
+            {
                 list.Add(JsonConvert.DeserializeObject<Room>(((JProperty)item).Value.ToString()));
-			}
+            }
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                list[0].code = searchString;
+            }
+
             return View(list);
 		}
 

@@ -67,7 +67,9 @@ html {
 body {
     /* Margin bottom by footer height */
     margin-bottom: 60px;
-    background: #020712;
+    background-image: url("/images/Realightbackground.jpg");
+    background-repeat: repeat;
+    background-position: center;
     font-family: 'Reem Kufi', sans-serif;
 }
 .footer {
@@ -95,6 +97,29 @@ input{
     border-radius:10px;
     text-align:center;
 }
+
+.search-button {
+    height: 30px;
+    width: 30%;
+    border-radius: 20px;
+    background-image: url("/images/searchBackground.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    color: white;
+    opacity: 0;
+    transition: 1s;
+}
+
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+
 
 /*Browse page CSS*/
 .browse-header{
