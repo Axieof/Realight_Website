@@ -3,11 +3,12 @@
 }
 
 <div style="position:fixed; left:0; right:0;">
-	
 	<a asp-controller="Home" asp-action="Index"></a><img class="mx-auto d-block HomepageLogo" src="~/images/realight.png" alt="Realight Logo">
-	<input type="search" id="searchDetails" class="mx-auto d-block search-bar" placeholder="Enter your interests here" />
-	<br />
-	<button id="search" class="mx-auto d-block search-button"><a class="text-white" asp-area="" asp-controller="Home" asp-action="Browse" asp-route-filterTag="@null">Let's Go!</a></button>
+	<form asp-action="Browse" method="get">
+		<input type="text" id="searchDetails" name="SearchString" value="@ViewData["currentFilter"]" class="mx-auto d-block search-bar" placeholder="Enter your interests here" />
+		<br />
+		<button type="submit" value="search" id="search" class="mx-auto d-block search-button">Let's Go!</button>
+	</form>
 </div>
 
 <script>
@@ -25,13 +26,11 @@
 	}
 
 
-	(function () {
-		var search = document.getElementById('searchDetails');
-		search.addEventListener('keypress', function (event) {
-			if (event.keyCode == 13) {
-				event.preventDefault();
-				button.click();
-			}
-		})
+	var search = document.getElementById('searchDetails');
+	search.addEventListener('keypress', function (event) {
+		if (event.keyCode == 13) {
+			event.preventDefault();
+			button.click();
+		}
 	})
 </script>

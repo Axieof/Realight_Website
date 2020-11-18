@@ -39,24 +39,30 @@ namespace Realight_Website.Controllers
             return View();
         }
 
-        public ActionResult Browse(string? filterTag)
-		{
+        [HttpGet]
+        public async Task<IActionResult> Browse(string? searchString)
+        {
+            //Use searchString as the input and use it to identify any similar interest tag
             HttpContext.Session.SetString("HomePage", "Default");
+
+            ViewData["CurrentFilter"] = searchString;
+
+            
+
             client = new FirebaseClient(config);
             FirebaseResponse response = client.Get("Rooms");
             dynamic data = JsonConvert.DeserializeObject<dynamic>(response.Body);
             var list = new List<Room>();
-            if(filterTag == null)
-			{
-                foreach (var item in data)
-                {
-                    list.Add(JsonConvert.DeserializeObject<Room>(((JProperty)item).Value.ToString()));
-                }
+     
+            foreach (var item in data)
+            {
+                list.Add(JsonConvert.DeserializeObject<Room>(((JProperty)item).Value.ToString()));
             }
-			else
-			{
 
-			}
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                list[0].code = searchString;
+            }
 
             return View(list);
 		}
