@@ -53,16 +53,26 @@ namespace Realight_Website.Controllers
             FirebaseResponse response = client.Get("Rooms");
             dynamic data = JsonConvert.DeserializeObject<dynamic>(response.Body);
             var list = new List<Room>();
-     
-            foreach (var item in data)
-            {
-                list.Add(JsonConvert.DeserializeObject<Room>(((JProperty)item).Value.ToString()));
-            }
 
             if (!String.IsNullOrEmpty(searchString))
             {
-                list[0].code = searchString;
+                foreach (var item in data)
+                {
+                    Room addRoom = JsonConvert.DeserializeObject<Room>(((JProperty)item).Value.ToString());
+					if (addRoom.interestTag.Contains(searchString) || addRoom.name.Contains(searchString))
+					{
+                        list.Add(addRoom);
+					}
+                }
             }
+			else
+			{
+                foreach (var item in data)
+                {
+                    list.Add(JsonConvert.DeserializeObject<Room>(((JProperty)item).Value.ToString()));
+                }
+            }
+            
 
             return View(list);
 		}
