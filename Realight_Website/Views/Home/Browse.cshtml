@@ -6,11 +6,12 @@
 
 <div class="browse-header">
     <h1>Browse</h1>
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
 </div>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+
 <div class="browse-container">
     @foreach (var item in Model)
     {
@@ -23,6 +24,14 @@
             @Html.DisplayFor(modelItem => item.mapURL)
             @Html.DisplayFor(modelItem => item.playerCount)
             @Html.DisplayFor(modelItem => item.imgURL)
+            <div class="tag-container">
+                @for (int i = 0; i < item.interestTag.Count(); i++)
+                {
+                    <div class="tag">@Html.DisplayFor(modelItem => item.interestTag[i])</div>
+                }
+            </div>
+
+
             <!--
     <div class="maps-actions">
     @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
