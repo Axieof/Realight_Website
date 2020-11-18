@@ -40,6 +40,6 @@ namespace Realight_Website.Models
         public string? playerCount { get; set; }
 
         [Display(Name = "Room Interest Tags")]
-        public List<string> RoomInterestTags { get; set; }
+        public List<string> interestTag { get; set; }
     }
 }

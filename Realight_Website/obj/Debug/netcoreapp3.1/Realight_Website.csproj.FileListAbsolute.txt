@@ -268,3 +268,5 @@ D:\Realight\Realight_Website\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.W
 D:\Realight\Realight_Website\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 D:\Realight\Realight_Website\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
 D:\Realight\Realight_Website\obj\Debug\netcoreapp3.1\Razor\Views\Home\Browse.cshtml.g.cs
+D:\Polytechnic Stuff\Semster 2.2\P2\Realight\Realight_Project\Realight_Website\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_DefaultLayout.cshtml.g.cs
+D:\Polytechnic Stuff\Semster 2.2\P2\Realight\Realight_Project\Realight_Website\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_HomePageLayout.cshtml.g.cs
