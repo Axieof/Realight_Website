@@ -41,5 +41,10 @@ namespace Realight_Website.Models
 
         [Display(Name = "Room Interest Tags")]
         public List<string> interestTag { get; set; }
+
+        [Display(Name = "Owner Name")]
+        [MaxLength(24, ErrorMessage = "Invalid Name!")]
+        [Required]
+        public string ownername { get; set; }
     }
 }
