@@ -275,16 +275,23 @@ input{
     display: flex;
 }
 
+    .Individual-Map-Header:hover {
+        box-shadow: 0 0 10px #151A24;
+        background-color: #484B51;
+        transition: all 0.1s
+    }
+
 .mapName {
     margin-bottom: 0px;
     margin-top: 0;
-    font-size:1em;
+    font-size: 1em;
 }
 
 .Individual-Map-Details {
     overflow: hidden;
-    transition: height .3s ease-in-out;
+    transition: height 0.5s ease-in-out;
     background-color: #2E3137;
+    box-shadow: 0 5px 10px #151A24;
 }
 
 .authorDetails{
