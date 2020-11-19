@@ -82,7 +82,6 @@ C:\Users\hjunz\Desktop\Realight\Realight_Website\bin\Debug\netcoreapp3.1\Realigh
 C:\Users\hjunz\Desktop\Realight\Realight_Website\bin\Debug\netcoreapp3.1\Realight_Website.pdb
 C:\Users\hjunz\Desktop\Realight\Realight_Website\bin\Debug\netcoreapp3.1\Realight_Website.Views.dll
 C:\Users\hjunz\Desktop\Realight\Realight_Website\bin\Debug\netcoreapp3.1\Realight_Website.Views.pdb
-C:\Users\hjunz\Desktop\Realight\Realight_Website\obj\Debug\netcoreapp3.1\Realight_Website.csprojAssemblyReference.cache
 C:\Users\hjunz\Desktop\Realight\Realight_Website\obj\Debug\netcoreapp3.1\Realight_Website.AssemblyInfoInputs.cache
 C:\Users\hjunz\Desktop\Realight\Realight_Website\obj\Debug\netcoreapp3.1\Realight_Website.AssemblyInfo.cs
 C:\Users\hjunz\Desktop\Realight\Realight_Website\obj\Debug\netcoreapp3.1\Realight_Website.RazorAssemblyInfo.cache
@@ -353,3 +352,5 @@ D:\Polytechnic Stuff\Semster 2.2\P2\Realight\Realight_Project\Realight_Website\o
 D:\Realight\Realight_Website\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_DefaultLayout.cshtml.g.cs
 D:\Realight\Realight_Website\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_HomePageLayout.cshtml.g.cs
 D:\Polytechnic Stuff\Semster 2.2\P2\Realight\Realight_Project\Realight_Website\obj\Debug\netcoreapp3.1\Realight_Website.csprojAssemblyReference.cache
+C:\Users\hjunz\Desktop\Realight\Realight_Website\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_DefaultLayout.cshtml.g.cs
+C:\Users\hjunz\Desktop\Realight\Realight_Website\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_HomePageLayout.cshtml.g.cs
