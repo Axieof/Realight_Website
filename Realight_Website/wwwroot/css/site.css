@@ -308,9 +308,18 @@ input{
     padding: 20px;
 }
 
-.MapDescription{
+.MapDescription {
     margin-top:20px;
 }
+
+.con-sample-image {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.sample-image {
+    width: 24%;
 }
 
 /*tooltip Box*/
