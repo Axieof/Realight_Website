@@ -354,3 +354,4 @@ D:\Realight\Realight_Website\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_HomePag
 D:\Polytechnic Stuff\Semster 2.2\P2\Realight\Realight_Project\Realight_Website\obj\Debug\netcoreapp3.1\Realight_Website.csprojAssemblyReference.cache
 C:\Users\hjunz\Desktop\Realight\Realight_Website\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_DefaultLayout.cshtml.g.cs
 C:\Users\hjunz\Desktop\Realight\Realight_Website\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_HomePageLayout.cshtml.g.cs
+C:\Users\hjunz\Desktop\Realight\Realight_Website\obj\Debug\netcoreapp3.1\Realight_Website.csprojAssemblyReference.cache

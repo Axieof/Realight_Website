@@ -21,9 +21,10 @@
                     <div class="map-header-info">
                         <div id="title">@Html.DisplayFor(modelItem => item.name)</div>
                         @Html.DisplayFor(modelItem => item.ownername)
-                    <div class="player-count">
+                    <div class="player-count con-tooltip">
                         <img id="person" src="~/images/whiteperson.png" />
                         <span>@Html.DisplayFor(modelItem => item.playerCount)</span>
+                        <div class="tooltip">Current Players</div>
                     </div>
                     </div>
                 </div>
@@ -34,7 +35,11 @@
                             <div class="tag">@Html.DisplayFor(modelItem => item.interestTag[i])</div>
                         }
                     </div>
-                    <div class="link"><a href=""><img id="link" src="~/images/link.png" /></a></div>
+                    <div class="link con-tooltip">
+                        <div class="tooltip">Copy Room Code</div>
+                        <a href=""><img id="link" src="~/images/link.png" /></a>
+
+                    </div>
                 </div>
             </div>
         }
