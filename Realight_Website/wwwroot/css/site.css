@@ -156,6 +156,9 @@ input{
     .map-panel:hover {
         box-shadow: 0 0 10px #fff;
     }
+        .map-panel:hover .map-info {
+            background-color: #52555C;
+        }
 
 .map-header {
     width: 425px;
@@ -237,7 +240,7 @@ input{
 }
 
 #link {
-    width: 1.2em;
+    width: 1.4em;
 }
 
 
@@ -344,8 +347,8 @@ input{
     border-width: 12px 12.5px 0 12.5px;
     border-color: #333 transparent transparent transparent;
     position: absolute;
-    top: 90%;
-    left: 26%;
+    top: 80%;
+    left: 35%;
 }
 
 .con-tooltip:hover .tooltip {

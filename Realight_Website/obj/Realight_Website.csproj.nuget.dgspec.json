@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\hjunz\\Desktop\\Realight\\Realight_Website\\Realight_Website.csproj": {}
+    "D:\\Realight\\Realight_Website\\Realight_Website.csproj": {}
   },
   "projects": {
-    "C:\\Users\\hjunz\\Desktop\\Realight\\Realight_Website\\Realight_Website.csproj": {
+    "D:\\Realight\\Realight_Website\\Realight_Website.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\hjunz\\Desktop\\Realight\\Realight_Website\\Realight_Website.csproj",
+        "projectUniqueName": "D:\\Realight\\Realight_Website\\Realight_Website.csproj",
         "projectName": "Realight_Website",
-        "projectPath": "C:\\Users\\hjunz\\Desktop\\Realight\\Realight_Website\\Realight_Website.csproj",
-        "packagesPath": "C:\\Users\\hjunz\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\hjunz\\Desktop\\Realight\\Realight_Website\\obj\\",
+        "projectPath": "D:\\Realight\\Realight_Website\\Realight_Website.csproj",
+        "packagesPath": "C:\\Users\\Junzhi\\.nuget\\packages\\",
+        "outputPath": "D:\\Realight\\Realight_Website\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\hjunz\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Junzhi\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
