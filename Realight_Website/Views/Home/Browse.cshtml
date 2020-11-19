@@ -36,8 +36,8 @@
                         }
                     </div>
                     <div class="link con-tooltip">
-                        <a href=""><img id="link" src="~/images/copytoclipboard.png" /></a>
-                        <div class="tooltip tooltip-2"><p>Copy Room Code</p></div>
+                        <a href="" onclick="copyToClipboard('@Html.DisplayFor(modelItem => item.code)')"><input style="display:none" id="@Html.DisplayFor(modelItem => item.code)" value="@Html.DisplayFor(modelItem => item.code)"/><img id="link" src="~/images/copytoclipboard.png" /></a>
+                        <div class="tooltip tooltip-2"><p id="@Html.DisplayFor(modelItem => item.code)-Text">Copy Room Code</p></div>
                     </div>
                 </div>
             </div>
@@ -48,3 +48,25 @@
 </div>
 
 
+<script>
+	function copyToClipboard(id) {
+        var copyText = document.getElementById(id);
+		copyText.style.display = "block";
+		copyText.select();
+		copyText.setSelectionRange(0, 99999)
+        document.execCommand("copy");
+        copyText.style.display = "none";
+        var changeText = document.getElementById(id + "-Text");
+        changeText.innerHTML = "Copied!";
+        changeText.style.color = "#056406";
+        setTimeout(function() {
+            changeBackToOriginal(id);
+        }, 7000);
+    }
+
+    function changeBackToOriginal(id) {
+		var changeText = document.getElementById(id + "-Text");
+		changeText.innerHTML = "Copy Room Code";
+		changeText.style.color = "#E086D3";
+	}
+</script>
