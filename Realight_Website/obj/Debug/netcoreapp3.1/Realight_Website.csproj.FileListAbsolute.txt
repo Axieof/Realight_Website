@@ -356,3 +356,4 @@ C:\Users\hjunz\Desktop\Realight\Realight_Website\obj\Debug\netcoreapp3.1\Razor\V
 C:\Users\hjunz\Desktop\Realight\Realight_Website\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_HomePageLayout.cshtml.g.cs
 C:\Users\hjunz\Desktop\Realight\Realight_Website\obj\Debug\netcoreapp3.1\Realight_Website.csprojAssemblyReference.cache
 D:\Polytechnic Stuff\Semster 2.2\P2\Realight\Realight_Project\Realight_Website\obj\Debug\netcoreapp3.1\Razor\Views\Home\MapList.cshtml.g.cs
+D:\Realight\Realight_Website\obj\Debug\netcoreapp3.1\Razor\Views\Home\MapList.cshtml.g.cs
