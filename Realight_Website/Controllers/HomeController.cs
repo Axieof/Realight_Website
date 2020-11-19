@@ -47,7 +47,7 @@ namespace Realight_Website.Controllers
 
             ViewData["CurrentFilter"] = searchString;
 
-            
+            searchString = searchString.ToLower();
 
             client = new FirebaseClient(config);
             FirebaseResponse response = client.Get("Rooms");

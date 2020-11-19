@@ -205,7 +205,8 @@ input{
     height: 1em;
     margin: 0 5px 0 5px;
     border-radius: 10px;
-    background-color: orange;
+
+    background-color: black;
     display: flex;
     justify-content: center;
     align-items: center;
