@@ -34,6 +34,7 @@ a {
 html {
     font-size: 14px;
     font-family: 'Reem Kufi', sans-serif;
+    overflow-y: scroll;
 }
 @media (min-width: 768px) {
   html {
@@ -69,7 +70,7 @@ body {
     margin-bottom: 60px;
     background-image: url("/images/Realightbackground.jpg");
     background-repeat: repeat;
-    background-position: center;
+    background-position: center 0;
     font-family: 'Reem Kufi', sans-serif;
 }
 .footer {
@@ -235,4 +236,65 @@ input{
 #link {
     width: 1.2em;
     height: auto;
+}
+
+
+/*Map List page CSS*/
+
+.map-title {
+    min-width: 450px;
+    padding: 1em;
+    margin: 0 auto;
+    justify-content: center;
+    background-image: linear-gradient(#056406, #24272E);
+    color: #F1F1F1;
+}
+
+.Map-header-container {
+    min-width: 450px;
+    margin: 0 auto;
+    justify-content: space-evenly;
+    align-self: center;
+    color: #F1F1F1;
+    background-color: #24272E;
+    padding-top:15px;
+    padding-bottom:15px;
+}
+
+.divider{
+    background-color:black;
+    min-height:2px;
+}
+
+.Individual-Map-Header {
+    cursor: pointer;
+    background-color: #393B40;
+    padding: 20px;
+    display: flex;
+}
+
+.mapName {
+    margin-bottom: 0px;
+    margin-top: 0;
+    font-size:1em;
+}
+
+.Individual-Map-Details {
+    overflow: hidden;
+    transition: height .3s ease-in-out;
+    background-color: #2E3137;
+}
+
+.authorDetails{
+    margin-left:auto;
+    padding-left:20px;
+    text-align:right;
+}
+
+.Content-Details {
+    padding: 20px;
+}
+
+.MapDescription{
+    margin-top:20px;
 }

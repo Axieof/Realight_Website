@@ -1,0 +1,64 @@
+﻿@model IEnumerable<Realight_Website.Models.Maps>
+
+@{
+	ViewData["Title"] = "List of Maps";
+}
+
+<div class="row">
+	<div class="col-1"></div>
+	<div class="col-10 map-title">Map List</div>
+	<div class="col-1"></div>
+</div>
+<div class="row">
+	<div class="col-1"></div>
+	<div class="Map-header-container col-10">
+		<p style="text-align:center"><span style="font-size:1.5em">Read this before downloading</span>
+		<br />
+		<span style="font-size:0.9em">
+			Details of how to put map into the folders such that it will register in the client.
+			<br />Caution Notes: -------------
+		</span></p>
+	</div>
+	<div class="col-1"></div>
+</div>
+<div class="row"><div class="col-1"></div><div class="col-10 divider"></div><div class="col-1"></div></div>
+<div class="row">
+	<div class="col-1"></div>
+	<div class="Map-header-container col-10">
+		@for (int i = 0; i < Model.Count();i++)
+		{
+			<div class="Individual-Map-Header" id="Map-@i" onclick="displayDetails('Map-Details-@i')">
+				<div class="mapName">@Html.DisplayFor(modelItem => Model.ElementAt(i).mapName)</div>
+				<div class="authorDetails">
+					<span class="dateCreated">@Html.DisplayFor(modelItem => Model.ElementAt(i).date)</span>
+					<span class="byWho">By</span>
+					<span class="authorName">@Html.DisplayFor(modelItem => Model.ElementAt(i).mapMaker)</span>
+				</div>
+			</div>
+			<div class="Individual-Map-Details" id="Map-Details-@i" style="height:0px">
+				<div class="Content-Details">
+					<div>
+						<a href="@Html.DisplayFor(modelItem => Model.ElementAt(i).downloadMapURL)">Download</a>
+					</div>
+					<div>
+
+					</div>
+					<div class="MapDescription"><p>@Html.DisplayFor(modelItem => Model.ElementAt(i).description)</p></div>
+				</div>
+			</div>
+		}
+	</div>
+	<div class="col-1"></div>
+</div>
+
+<script>
+	function displayDetails(id) {
+		var MapID = document.getElementById(id)
+		if (MapID.style.height == "0px") {
+			MapID.style.height = "200px";
+		}
+		else {
+			MapID.style.height = "0px";
+		}
+	}
+</script>
