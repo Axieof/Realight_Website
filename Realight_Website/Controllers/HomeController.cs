@@ -47,7 +47,7 @@ namespace Realight_Website.Controllers
 
             ViewData["CurrentFilter"] = searchString;
 
-            searchString = searchString.ToLower();
+            
 
             client = new FirebaseClient(config);
             FirebaseResponse response = client.Get("Rooms");
@@ -56,6 +56,7 @@ namespace Realight_Website.Controllers
 
             if (!String.IsNullOrEmpty(searchString))
             {
+                searchString = searchString.ToLower();
                 foreach (var item in data)
                 {
                     Room addRoom = JsonConvert.DeserializeObject<Room>(((JProperty)item).Value.ToString());
