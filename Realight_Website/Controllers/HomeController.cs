@@ -56,6 +56,7 @@ namespace Realight_Website.Controllers
 
             if (!String.IsNullOrEmpty(searchString))
             {
+                searchString = searchString.ToLower();
                 foreach (var item in data)
                 {
                     Room addRoom = JsonConvert.DeserializeObject<Room>(((JProperty)item).Value.ToString());

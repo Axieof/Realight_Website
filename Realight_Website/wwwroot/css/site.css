@@ -11,6 +11,7 @@ a.navbar-brand {
 /* Provide sufficient contrast against white background */
 a {
   color: #0366d6;
+  cursor : pointer;
 }
 
 .nav-color {
@@ -205,7 +206,8 @@ input{
     height: 1em;
     margin: 0 5px 0 5px;
     border-radius: 10px;
-    background-color: orange;
+
+    background-color: black;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -312,6 +314,7 @@ input{
 }
 
 .con-sample-image {
+    padding-top:20px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -320,6 +323,7 @@ input{
 .sample-image {
     width: 24%;
 }
+
 
 /*tooltip Box*/
 .con-tooltip {
