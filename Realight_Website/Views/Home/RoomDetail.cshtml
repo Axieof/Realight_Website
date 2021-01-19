@@ -4,53 +4,57 @@
 	ViewData["Title"] = "Browse";
 }
 
+
 <div>
-	<!--Photo + World Header-->
-	<div class="row">
-		<div class="col-1"></div>
-		<div class="browse-container col-8">
-			<div><!--Details of World name--></div>
-			<div><!--Detail of Owner name--></div>
+	@foreach (var item in Model)
+	{
+		<!--Photo + World Header-->
+		<div class="row">
+			<div class="col-1"></div>
+			<div class="browse-container col-8">
+				<div>@Html.DisplayFor(modelItem => item.RoomID)</div>
+				<div><!--Detail of Owner name--></div>
+			</div>
+			<div class="browse-container col-2">
+				<div><!--Join Button--></div>
+			</div>
+			<div class="col-1"></div>
 		</div>
-		<div class="browse-container col-2">
-			<div><!--Join Button--></div>
+		<!--Header for the content-->
+		<div class="row">
+			<div class="col-1"></div>
+			<div class="col-6">Description</div>
+			<div class="col-4">Interest Tags</div>
+			<div class="col-1"></div>
+		</div>
+		<!--Content Here-->
+		<div class="row">
+			<div class="col-1"></div>
+			<div class="col-6"><!--Description--></div>
+			<div class="col-4"><!--Interest Tags/Language/Rating--></div>
+			<div class="col-1"></div>
+		</div>
+		<!--Comment header-->
+		<div class="row">
+			<div class="col-1"></div>
+			<div class="col-10">Comments</div>
+			<div class="col-1"></div>
+		</div>
+		<!--Comments-->
+		<div class="col-1"></div>
+		<div class="col-6"><!--Comment box--></div>
+		<div class="col-2"><!--Post Button--></div>
+		<div class="col-2"></div>
+		<div class="col-1"></div>
+		<!--Comment Section-->
+		<div class="col-1"></div>
+		<div class="col-2"><!--Profile Img--></div>
+		<div class="col-8">
+			<div><!--Commenter Name--></div>
+			<div><!--Comment Message--></div>
 		</div>
 		<div class="col-1"></div>
-	</div>
-	<!--Header for the content-->
-	<div class="row">
-		<div class="col-1"></div>
-		<div class="col-6">Description</div>
-		<div class="col-4">Interest Tags</div>
-		<div class="col-1"></div>
-	</div>
-	<!--Content Here-->
-	<div class="row">
-		<div class="col-1"></div>
-		<div class="col-6"><!--Description--></div>
-		<div class="col-4"><!--Interest Tags/Language/Rating--></div>
-		<div class="col-1"></div>
-	</div>
-	<!--Comment header-->
-	<div class="row">
-		<div class="col-1"></div>
-		<div class="col-10">Comments</div>
-		<div class="col-1"></div>
-	</div>
-	<!--Comments-->
-	<div class="col-1"></div>
-	<div class="col-6"><!--Comment box--></div>
-	<div class="col-2"><!--Post Button--></div>
-	<div class="col-2"></div>
-	<div class="col-1"></div>
-	<!--Comment Section-->
-	<div class="col-1"></div>
-	<div class="col-2"><!--Profile Img--></div>
-	<div class="col-8">
-		<div><!--Commenter Name--></div>
-		<div><!--Comment Message--></div>
-	</div>
-	<div class="col-1"></div>
+	}
 </div>
 
 
