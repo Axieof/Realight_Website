@@ -16,31 +16,34 @@
     <div class="browse-container col-10">
         @foreach (var item in Model)
         {
-            <div class="map-panel" href="">
-                <div class="map-header">
-                    <div class="map-header-info">
-                        <div id="title">@Html.DisplayFor(modelItem => item.name)</div>
-                        @Html.DisplayFor(modelItem => item.ownername)
-                    <div class="player-count con-tooltip">
-                        <img id="person" src="~/images/whiteperson.png" />
-                        <span>@Html.DisplayFor(modelItem => item.playerCount)</span>
-                        <div class="tooltip"><p>Current Players</p></div>
-                    </div>
-                    </div>
-                </div>
-                <div class="map-info">
-                    <div class="tag-container">
-                        @for (int i = 0; i < item.interestTag.Count(); i++)
-                        {
-                            <div class="tag">@Html.DisplayFor(modelItem => item.interestTag[i])</div>
-                        }
-                    </div>
-                    <div class="link con-tooltip">
-                        <a onclick="copyToClipboard('@Html.DisplayFor(modelItem => item.code)')"><input style="display:none" id="@Html.DisplayFor(modelItem => item.code)" value="@Html.DisplayFor(modelItem => item.code)"/><img id="link" src="~/images/copytoclipboard.png" /></a>
-                        <div class="tooltip tooltip-2"><p id="@Html.DisplayFor(modelItem => item.code)-Text">Copy Room Code</p></div>
-                    </div>
-                </div>
-            </div>
+			<a class="LinkToDetail" asp-action="RoomDetail" asp-controller="Home"
+                           asp-route-id="@item.RoomID">
+				<div class="map-panel" href="">
+					<div class="map-header">
+						<div class="map-header-info">
+							<div id="title">@Html.DisplayFor(modelItem => item.name)</div>
+							@Html.DisplayFor(modelItem => item.ownername)
+							<div class="player-count con-tooltip">
+								<img id="person" src="~/images/whiteperson.png" />
+								<span>@Html.DisplayFor(modelItem => item.playerCount)</span>
+								<div class="tooltip"><p>Current Players</p></div>
+							</div>
+						</div>
+					</div>
+					<div class="map-info">
+						<div class="tag-container">
+							@for (int i = 0; i < item.interestTag.Count(); i++)
+							{
+								<div class="tag">@Html.DisplayFor(modelItem => item.interestTag[i])</div>
+							}
+						</div>
+						<div class="link con-tooltip">
+							<a onclick="copyToClipboard('@Html.DisplayFor(modelItem => item.code)')"><input style="display:none" id="@Html.DisplayFor(modelItem => item.code)" value="@Html.DisplayFor(modelItem => item.code)" /><img id="link" src="~/images/copytoclipboard.png" /></a>
+							<div class="tooltip tooltip-2"><p id="@Html.DisplayFor(modelItem => item.code)-Text">Copy Room Code</p></div>
+						</div>
+					</div>
+				</div>
+			</a>
         }
     </div>
 

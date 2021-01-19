@@ -47,8 +47,6 @@ namespace Realight_Website.Controllers
 
             ViewData["CurrentFilter"] = searchString;
 
-            
-
             client = new FirebaseClient(config);
             FirebaseResponse response = client.Get("Rooms");
             dynamic data = JsonConvert.DeserializeObject<dynamic>(response.Body);
@@ -59,8 +57,9 @@ namespace Realight_Website.Controllers
                 searchString = searchString.ToLower();
                 foreach (var item in data)
                 {
+                    //string roomID = item[]
                     Room addRoom = JsonConvert.DeserializeObject<Room>(((JProperty)item).Value.ToString());
-					if (addRoom.interestTag.Contains(searchString) || addRoom.name.Contains(searchString))
+                    if (addRoom.interestTag.Contains(searchString) || addRoom.name.Contains(searchString))
 					{
                         list.Add(addRoom);
 					}
@@ -70,13 +69,49 @@ namespace Realight_Website.Controllers
 			{
                 foreach (var item in data)
                 {
-                    list.Add(JsonConvert.DeserializeObject<Room>(((JProperty)item).Value.ToString()));
+                    Room addRoom = JsonConvert.DeserializeObject<Room>(((JProperty)item).Value.ToString());
+                    addRoom.RoomID = item.Name;
+                    list.Add(addRoom);
                 }
             }
             
 
             return View(list);
 		}
+
+        [HttpGet]
+        public async Task<IActionResult> RoomDetail(string? id)
+        {
+            //Use searchString as the input and use it to identify any similar interest tag
+            HttpContext.Session.SetString("HomePage", "Default");
+
+            client = new FirebaseClient(config);
+            FirebaseResponse response = client.Get("Rooms");
+            dynamic data = JsonConvert.DeserializeObject<dynamic>(response.Body);
+            var list = new List<Room>();
+
+            //Checking for the ID
+            if (!String.IsNullOrEmpty(id))
+            {
+                foreach (var item in data)
+                {
+                    Room addRoom = JsonConvert.DeserializeObject<Room>(((JProperty)item).Value.ToString());
+                    addRoom.RoomID = item.Name;
+                    if (addRoom.RoomID.Contains(id))
+                    {;
+                        list.Add(addRoom);
+                        return View(list);
+                    }
+                }
+            }
+            else
+            {
+                return View(list);
+            }
+
+
+            return View(list);
+        }
 
         [HttpGet]
         public async Task<IActionResult> MapList()
