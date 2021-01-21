@@ -130,6 +130,13 @@ namespace Realight_Website.Controllers
 
             return View(list);
         }
+
+
+        [HttpGet]
+        public async Task<IActionResult> Login(string? id)
+        {
+            return View();
+        }
         public IActionResult Privacy()
         {
             return View();

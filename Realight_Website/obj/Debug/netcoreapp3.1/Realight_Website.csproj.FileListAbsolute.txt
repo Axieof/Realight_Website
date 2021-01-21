@@ -12,8 +12,6 @@ D:\Realight\Realight_Website\bin\Debug\netcoreapp3.1\Realight_Website.Views.pdb
 D:\Realight\Realight_Website\obj\Debug\netcoreapp3.1\Realight_Website.csprojAssemblyReference.cache
 D:\Realight\Realight_Website\obj\Debug\netcoreapp3.1\Realight_Website.AssemblyInfoInputs.cache
 D:\Realight\Realight_Website\obj\Debug\netcoreapp3.1\Realight_Website.AssemblyInfo.cs
-D:\Realight\Realight_Website\obj\Debug\netcoreapp3.1\Realight_Website.csproj.CoreCompileInputs.cache
-D:\Realight\Realight_Website\obj\Debug\netcoreapp3.1\Realight_Website.MvcApplicationPartsAssemblyInfo.cache
 D:\Realight\Realight_Website\obj\Debug\netcoreapp3.1\Realight_Website.RazorAssemblyInfo.cache
 D:\Realight\Realight_Website\obj\Debug\netcoreapp3.1\Realight_Website.RazorAssemblyInfo.cs
 D:\Realight\Realight_Website\obj\Debug\netcoreapp3.1\Realight_Website.TagHelpers.input.cache
@@ -358,3 +356,16 @@ C:\Users\hjunz\Desktop\Realight\Realight_Website\obj\Debug\netcoreapp3.1\Realigh
 D:\Polytechnic Stuff\Semster 2.2\P2\Realight\Realight_Project\Realight_Website\obj\Debug\netcoreapp3.1\Razor\Views\Home\MapList.cshtml.g.cs
 D:\Realight\Realight_Website\obj\Debug\netcoreapp3.1\Razor\Views\Home\MapList.cshtml.g.cs
 D:\Polytechnic Stuff\Semster 2.2\P2\Realight\Realight_Project\Realight_Website\obj\Debug\netcoreapp3.1\Razor\Views\Home\RoomDetail.cshtml.g.cs
+D:\Realight\Realight_Website\obj\Debug\netcoreapp3.1\Razor\Views\Home\RoomDetail.cshtml.g.cs
+D:\Realight\Realight_Website\obj\Debug\netcoreapp3.1\Razor\Views\Home\Login.cshtml.g.cs
+D:\Realight\Realight_Website\bin\Debug\netcoreapp3.1\Microsoft.Owin.dll
+D:\Realight\Realight_Website\bin\Debug\netcoreapp3.1\Owin.dll
+D:\Realight\Realight_Website\bin\Debug\netcoreapp3.1\Microsoft.AspNet.Identity.Core.dll
+D:\Realight\Realight_Website\bin\Debug\netcoreapp3.1\Microsoft.AspNet.Identity.Owin.dll
+D:\Realight\Realight_Website\bin\Debug\netcoreapp3.1\Microsoft.Owin.Security.dll
+D:\Realight\Realight_Website\bin\Debug\netcoreapp3.1\Microsoft.Owin.Security.Cookies.dll
+D:\Realight\Realight_Website\bin\Debug\netcoreapp3.1\Microsoft.Owin.Security.OAuth.dll
+D:\Realight\Realight_Website\bin\Debug\netcoreapp3.1\Firebase.Auth.dll
+D:\Realight\Realight_Website\bin\Debug\netcoreapp3.1\System.ServiceModel.dll
+D:\Realight\Realight_Website\obj\Debug\netcoreapp3.1\Realight_Website.csproj.CoreCompileInputs.cache
+D:\Realight\Realight_Website\obj\Debug\netcoreapp3.1\Realight_Website.MvcApplicationPartsAssemblyInfo.cache
