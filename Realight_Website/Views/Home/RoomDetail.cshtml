@@ -7,54 +7,74 @@
 
 <div>
 	@foreach (var item in Model)
-	{
-		<!--Photo + World Header-->
-		<div class="row">
-			<div class="col-1"></div>
-			<div class="browse-container col-8">
-				<div>@Html.DisplayFor(modelItem => item.RoomID)</div>
-				<div><!--Detail of Owner name--></div>
+		{
+			<div class="container-fluid">
+				<!--Photo + World Header-->
+				<div class="row equalheight">
+					<div class="col-1"></div>
+					<div class="details-header-container col-10">
+						<div>
+							<p class="details-header-content">
+								<span style="font-size:1.5em">@Html.DisplayFor(modelItem => item.name)</span>
+								<br />
+								<span style="font-size:0.8em">created by: Danny Chan</span>
+
+							</p>
+						</div>
+					</div>
+					<div class="col-1"></div>
+				</div>
+				<!--Header for the content-->
+
+				<div class="row">
+					<div class="col-md-1"></div>
+					<div class="col-md-6 details-container">
+						<p>
+							<span style="font-size:1.2em">Description</span>
+							<br />
+							<span>
+								For Now This is just Sample text to fill the space
+								For Now This is just Sample text to fill the space
+								For Now This is just Sample text to fill the space
+								For Now This is just Sample text to fill the space
+							</span>
+						</p>
+					</div>
+					<div class="col-md-4 details-container">Interest Tags</div>
+					<div class="col-md-1"></div>
+				</div>
+
+				<!--Content Here-->
+				<div class="row equalheight">
+					<div class="col-1"></div>
+					<div class="col-6 details-container"><!--Description--></div>
+					<div class="col-4 details-container"><!--Interest Tags/Language/Rating--></div>
+					<div class="col-1"></div>
+				</div>
+				<!--Comment header-->
+				<div class="row equalheight">
+					<div class="col-1"></div>
+					<div class="col-10 details-container">Comments</div>
+					<div class="col-1"></div>
+				</div>
+				<!--Comments-->
+				<div class="row equalheight">
+					<div class="col-1"></div>
+					<div class="col-6 details-container"><!--Comment box--></div>
+					<div class="col-2 details-container"><!--Post Button--></div>
+					<div class="col-2 details-container"></div>
+					<div class="col-1"></div>
+				</div>
+				<!--Comment Section-->
+				<div class="col-1"></div>
+				<div class="col-2"><!--Profile Img--></div>
+				<div class="col-8">
+					<div><!--Commenter Name--></div>
+					<div><!--Comment Message--></div>
+				</div>
+				<div class="col-1"></div>
 			</div>
-			<div class="browse-container col-2">
-				<div><!--Join Button--></div>
-			</div>
-			<div class="col-1"></div>
-		</div>
-		<!--Header for the content-->
-		<div class="row">
-			<div class="col-1"></div>
-			<div class="col-6">Description</div>
-			<div class="col-4">Interest Tags</div>
-			<div class="col-1"></div>
-		</div>
-		<!--Content Here-->
-		<div class="row">
-			<div class="col-1"></div>
-			<div class="col-6"><!--Description--></div>
-			<div class="col-4"><!--Interest Tags/Language/Rating--></div>
-			<div class="col-1"></div>
-		</div>
-		<!--Comment header-->
-		<div class="row">
-			<div class="col-1"></div>
-			<div class="col-10">Comments</div>
-			<div class="col-1"></div>
-		</div>
-		<!--Comments-->
-		<div class="col-1"></div>
-		<div class="col-6"><!--Comment box--></div>
-		<div class="col-2"><!--Post Button--></div>
-		<div class="col-2"></div>
-		<div class="col-1"></div>
-		<!--Comment Section-->
-		<div class="col-1"></div>
-		<div class="col-2"><!--Profile Img--></div>
-		<div class="col-8">
-			<div><!--Commenter Name--></div>
-			<div><!--Comment Message--></div>
-		</div>
-		<div class="col-1"></div>
-	}
-</div>
+		}
+	</div>
 
 

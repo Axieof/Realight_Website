@@ -401,3 +401,38 @@ input{
 .tooltip-2::after{
     left: 75%;
 }
+
+/*Room Detail Page*/
+.details-header-container {
+    min-width: 450px;
+    min-height: 180px;
+    margin: 0 auto;
+    justify-content: space-evenly;
+    align-self: center;
+    color: #F1F1F1;
+    background-image: url("/images/placeholder-header.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-radius: 15px 15px 0 0;
+}
+
+.details-header-content {
+    position: absolute;
+    bottom: 0;
+    left: 30px;
+}
+
+.details-container {
+    margin: 0 auto;
+    justify-content: space-evenly;
+    align-self: center;
+    color: #F1F1F1;
+    background-color: #24272E;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    min-height:200px;
+}
+
+
