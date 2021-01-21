@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "XS4ifEkFcRROmiraAtZkZWu7x1Whsj3VcFwhIEsV53MP4Yi8mDceS0oVFAVxjgkQhR1Xvy86bhaF/U5ZlTzTnA==",
+  "dgSpecHash": "DaQ//EYdEcJQ4C5ffoINiRvCbqT7HLKrFJW5/8VDNYBMw/iA5L/BY/zplCtQ3BuNdLa0sklI//ijbOA9WL64GQ==",
   "success": true,
   "projectFilePath": "D:\\Realight\\Realight_Website\\Realight_Website.csproj",
   "expectedPackageFiles": [
@@ -34,6 +34,7 @@
     "C:\\Users\\Junzhi\\.nuget\\packages\\microsoft.owin.security\\3.0.1\\microsoft.owin.security.3.0.1.nupkg.sha512",
     "C:\\Users\\Junzhi\\.nuget\\packages\\microsoft.owin.security.cookies\\3.0.1\\microsoft.owin.security.cookies.3.0.1.nupkg.sha512",
     "C:\\Users\\Junzhi\\.nuget\\packages\\microsoft.owin.security.oauth\\3.0.1\\microsoft.owin.security.oauth.3.0.1.nupkg.sha512",
+    "C:\\Users\\Junzhi\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.10.9\\microsoft.visualstudio.azure.containers.tools.targets.1.10.9.nupkg.sha512",
     "C:\\Users\\Junzhi\\.nuget\\packages\\microsoft.visualstudio.web.codegeneration\\3.1.4\\microsoft.visualstudio.web.codegeneration.3.1.4.nupkg.sha512",
     "C:\\Users\\Junzhi\\.nuget\\packages\\microsoft.visualstudio.web.codegeneration.contracts\\3.1.4\\microsoft.visualstudio.web.codegeneration.contracts.3.1.4.nupkg.sha512",
     "C:\\Users\\Junzhi\\.nuget\\packages\\microsoft.visualstudio.web.codegeneration.core\\3.1.4\\microsoft.visualstudio.web.codegeneration.core.3.1.4.nupkg.sha512",
