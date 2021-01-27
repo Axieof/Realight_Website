@@ -427,12 +427,43 @@ input{
 .details-container {
     margin: 0 auto;
     justify-content: space-evenly;
-    align-self: center;
     color: #F1F1F1;
     background-color: #24272E;
     padding-top: 15px;
     padding-bottom: 15px;
-    min-height:200px;
 }
 
+.comment-container {
+    margin: 0 auto;
+    justify-content: space-evenly;
+    color: #F1F1F1;
+    background-color: #24272E;
+    padding-top: 15px;
+}
+
+.comment-textarea {
+    height: 40px;
+    border-radius: 10px;
+    width: 60%;
+    padding: 8px 10px 8px 10px;
+}
+
+.postBtn {
+    border: none;
+    background: none;
+    padding-left: 30px;
+    color: #A9FF8A;
+}
+
+.comment-section {
+    padding-left: 25px;
+    margin: 0 auto;
+    justify-content: space-evenly;
+    color: #F1F1F1;
+    background-color: #393B40;
+    padding-top: 15px;
+    border-bottom: solid #24272E 2px;
+    padding-right: 25px;
+    padding-bottom: 15px;
+}
 

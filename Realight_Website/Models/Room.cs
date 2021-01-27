@@ -46,5 +46,18 @@ namespace Realight_Website.Models
         [MaxLength(24, ErrorMessage = "Invalid Name!")]
         [Required]
         public string ownername { get; set; }
+
+        [Display(Name = "Language")]
+        [Range(0, 9999)]
+        public string? language { get; set; }
+
+        [Display(Name = "age rating")]
+        [Range(0, 9999)]
+        public string? age { get; set; }
+
+        [Display(Name = "room description")]
+        [Range(0, 9999)]
+        public string? description { get; set; }
+
     }
 }

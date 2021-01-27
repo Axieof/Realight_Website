@@ -371,7 +371,6 @@ D:\Realight\Realight_Website\obj\Debug\netcoreapp3.1\Realight_Website.csproj.Cor
 D:\Realight\Realight_Website\obj\Debug\netcoreapp3.1\Realight_Website.MvcApplicationPartsAssemblyInfo.cache
 D:\Polytechnic Stuff\Semster 2.2\P2\Realight\Realight_Website\Realight_Website\bin\Debug\netcoreapp3.1\appsettings.Development.json
 D:\Polytechnic Stuff\Semster 2.2\P2\Realight\Realight_Website\Realight_Website\bin\Debug\netcoreapp3.1\appsettings.json
-D:\Polytechnic Stuff\Semster 2.2\P2\Realight\Realight_Website\Realight_Website\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
 D:\Polytechnic Stuff\Semster 2.2\P2\Realight\Realight_Website\Realight_Website\bin\Debug\netcoreapp3.1\Realight_Website.exe
 D:\Polytechnic Stuff\Semster 2.2\P2\Realight\Realight_Website\Realight_Website\bin\Debug\netcoreapp3.1\Realight_Website.deps.json
 D:\Polytechnic Stuff\Semster 2.2\P2\Realight\Realight_Website\Realight_Website\bin\Debug\netcoreapp3.1\Realight_Website.runtimeconfig.json
@@ -500,3 +499,4 @@ D:\Polytechnic Stuff\Semster 2.2\P2\Realight\Realight_Website\Realight_Website\o
 D:\Polytechnic Stuff\Semster 2.2\P2\Realight\Realight_Website\Realight_Website\obj\Debug\netcoreapp3.1\Realight_Website.dll
 D:\Polytechnic Stuff\Semster 2.2\P2\Realight\Realight_Website\Realight_Website\obj\Debug\netcoreapp3.1\Realight_Website.pdb
 D:\Polytechnic Stuff\Semster 2.2\P2\Realight\Realight_Website\Realight_Website\obj\Debug\netcoreapp3.1\Realight_Website.genruntimeconfig.cache
+D:\Polytechnic Stuff\Semster 2.2\P2\Realight\Realight_Website\Realight_Website\obj\Debug\netcoreapp3.1\scopedcss\bundle\Realight_Website.styles.css
