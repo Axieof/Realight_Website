@@ -38,6 +38,10 @@ namespace Realight_Website.Controllers
             HttpContext.Session.SetString("HomePage", "BackgroundVideo");
             return View();
         }
+        public IActionResult Register()
+        {
+            return View();
+        }
         public IActionResult Login()
         {
             return View();

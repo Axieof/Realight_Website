@@ -1,0 +1,56 @@
+﻿@model Realight_Website.Models.Player
+
+@{
+    ViewData["Title"] = "Register";
+}
+
+<body>
+    <div class="row col-4">
+        <form method="post" asp-action="Register" class="col-10">
+        </form>
+        <div style="position:fixed; left:0; right:0;" class="col-10" id="login_div">
+            <form method="post" action="~/Home/Register">
+                <fieldset class="loginFieldset">
+                    <span style="color:darkred;">@TempData["Message"]</span>
+                    <div class="form-group row" style="height: auto">
+                        <!--NAME-->
+                        <label asp-for="name" class="col-sm-3 col-form-label"></label>
+                        <div class="col-sm-9">
+                            <input asp-for="name" class="form-control" />
+                            <span asp-validation-for="name" class="text-danger"></span>
+                        </div>
+                        <br />
+                        <!--EMAIL-->
+                        <label asp-for="email" class="col-sm-3 col-form-label"></label>
+                        <div class="col-sm-9">
+                            <input asp-for="email" class="form-control" />
+                            <span asp-validation-for="email" class="text-danger"></span>
+                        </div>
+                        <br />
+                        <!--PASSWORD-->
+                        <label asp-for="password" class="col-sm-3 col-form-label"></label>
+                        <div class="col-sm-9">
+                            <input asp-for="password" class="form-control" />
+                            <span asp-validation-for="password" class="text-danger"></span>
+                        </div>
+                        <br />
+                    </div>
+
+                    <br />
+                    <input type="submit" id="registerBtn" class="registerButton" value="Register" />
+                </fieldset>
+            </form>
+        </div>
+
+        <div class="col-1"></div>
+    </div>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-analytics.js"></script>
+
+    <script src="site.js"></script>
+</body>
