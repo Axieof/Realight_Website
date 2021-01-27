@@ -6,17 +6,22 @@
     <div class="row">
         <div class="col-1"></div>
         <div style="position:fixed; left:0; right:0;" class="col-10" id="login_div">
-            <fieldset class="loginFieldset">
-                <legend>Login</legend>
-                <input type="email" id="email" required placeholder="Email Address" /><br />
+            <form method="post" action="~/Home/Login">
+                <fieldset class="loginFieldset">
+                    <legend>Login</legend>
+                    <label for="txtLoginID">Email Address:</label>
+                    <input type="email" name="txtLoginID" id="txtLoginID" required /><br />
 
-                <input type="password" id="password" style="width:100px" required placeholder="Password" />
-                <button onclick="login()">Login</button>
-                <br />
-                <span style="color:darkred;">@TempData["Message"]</span>
+                    <label for="Password">Password:</label>
+                    <input type="password" name="Password" id="Password" style="width:100px" required />
+                    <input type="submit" id="btnStaffLogin" class="loginbutton" value="Login" />
 
-            </fieldset>
-            <a class="nav-link" asp-controller="Home" asp-action="Register">Click here to Register!</a>
+                    <br />
+                    <span style="color:darkred;">@TempData["Message"]</span>
+
+                </fieldset>
+                <a class="nav-link" asp-controller="Home" asp-action="Register">Click here to Register!</a>
+            </form>
         </div>
         <div id="user_div">
             <h3>Welcome User</h3>
