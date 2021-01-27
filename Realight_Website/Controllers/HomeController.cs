@@ -38,7 +38,16 @@ namespace Realight_Website.Controllers
             HttpContext.Session.SetString("HomePage", "BackgroundVideo");
             return View();
         }
-        [HttpGet]
+        public IActionResult Login()
+        {
+            return View();
+        }
+        public IActionResult Logout()
+        {
+            HttpContext.Session.Remove("User");
+            return View("Index");
+        }
+        [HttpPost]
         public ActionResult Login(IFormCollection formData)
         {
             // Read inputs from textboxes             
@@ -61,7 +70,7 @@ namespace Realight_Website.Controllers
                     {
                         if(user.password == password)
                         {
-                            HttpContext.Session.SetString("User", user.id);
+                            HttpContext.Session.SetString("User", user.name);
                         }
                     }
                 }
@@ -77,7 +86,7 @@ namespace Realight_Website.Controllers
                     }
                 }
             }
-            return View();
+            return View("Index");
         }
         [HttpGet]
         public async Task<IActionResult> Browse(string? searchString)

@@ -33,7 +33,7 @@ namespace Realight_Website.Models
         public List<string> comments { get; set; }
 
         [Display(Name = "Worlds")]
-        public string worlds { get; set; }
+        public List<string> worlds { get; set; }
 
         public string email { get; set; }
         public string password { get; set; }
