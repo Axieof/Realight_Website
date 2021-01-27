@@ -38,7 +38,47 @@ namespace Realight_Website.Controllers
             HttpContext.Session.SetString("HomePage", "BackgroundVideo");
             return View();
         }
+        [HttpGet]
+        public ActionResult Login(IFormCollection formData)
+        {
+            // Read inputs from textboxes             
+            // Email address converted to lowercase
+            string loginID = formData["txtLoginID"].ToString().ToLower();
+            string password = formData["Password"].ToString();
 
+            client = new FirebaseClient(config);
+            FirebaseResponse response = client.Get("Player");
+            dynamic data = JsonConvert.DeserializeObject<dynamic>(response.Body);
+            var list = new List<Player>();
+
+            if (!String.IsNullOrEmpty(loginID))
+            {
+                foreach (var item in data)
+                {
+                    //string roomID = item[]
+                    Player user = JsonConvert.DeserializeObject<Player>(((JProperty)item).Value.ToString());
+                    if (user.email.ToLower() == loginID)
+                    {
+                        if(user.password == password)
+                        {
+                            HttpContext.Session.SetString("User", user.id);
+                        }
+                    }
+                }
+            }
+            else
+            {
+                foreach (var item in data)
+                {
+                    Player user = JsonConvert.DeserializeObject<Player>(((JProperty)item).Value.ToString());
+                    if (user.email.ToLower() == loginID)
+                    {
+                        list.Add(user);
+                    }
+                }
+            }
+            return View();
+        }
         [HttpGet]
         public async Task<IActionResult> Browse(string? searchString)
         {
@@ -129,13 +169,6 @@ namespace Realight_Website.Controllers
             }
 
             return View(list);
-        }
-
-
-        [HttpGet]
-        public async Task<IActionResult> Login(string? id)
-        {
-            return View();
         }
         public IActionResult Privacy()
         {

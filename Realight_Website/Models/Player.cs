@@ -34,5 +34,9 @@ namespace Realight_Website.Models
 
         [Display(Name = "Worlds")]
         public string worlds { get; set; }
+
+        public string email { get; set; }
+        public string password { get; set; }
+
     }
 }
