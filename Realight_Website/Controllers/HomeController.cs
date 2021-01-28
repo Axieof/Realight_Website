@@ -40,7 +40,27 @@ namespace Realight_Website.Controllers
         }
         public IActionResult Register()
         {
-            return View();
+            return View("Register");
+        }
+        [HttpPost]
+        public async Task<ActionResult> Register(IFormCollection formData)
+        {
+            client = new FirebaseClient(config);
+            //Read inputs from textboxes
+            string name = formData["name"].ToString();
+            string email = formData["email"].ToString().ToLower();
+            string password = formData["password"].ToString();
+
+            var player = new Player
+            {
+                id = "1",
+                name = name,
+                email = email,
+                password = password
+            };
+            SetResponse response = await client.SetAsync("Player/" + "1", player);
+            Player result = response.ResultAs<Player>();
+            return View("Login");
         }
         public IActionResult Login()
         {
