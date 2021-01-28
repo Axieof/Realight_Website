@@ -187,6 +187,40 @@ namespace Realight_Website.Controllers
         }
 
         [HttpGet]
+        public async Task<IActionResult> Profile(string? ownername)
+        {
+            //Use searchString as the input and use it to identify any similar interest tag
+            HttpContext.Session.SetString("HomePage", "Default");
+
+            client = new FirebaseClient(config);
+            FirebaseResponse response = client.Get("Player");
+            dynamic data = JsonConvert.DeserializeObject<dynamic>(response.Body);
+            var list = new List<Player>();
+
+            //Checking for the ID
+            if (!String.IsNullOrEmpty(ownername))
+            {
+                foreach (var item in data)
+                {
+                    Player addPlayer = JsonConvert.DeserializeObject<Player>(((JProperty)item).Value.ToString());
+                    addPlayer.id = item.id;
+                    if (addPlayer.name.Contains(ownername))
+                    {
+                        ;
+                        list.Add(addPlayer);
+                        return View(list);
+                    }
+                }
+            }
+            else
+            {
+                return View(list);
+            }
+
+
+            return View(list);
+        }
+        [HttpGet]
         public async Task<IActionResult> MapList()
         {
             //Use searchString as the input and use it to identify any similar interest tag

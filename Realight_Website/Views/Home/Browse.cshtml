@@ -22,7 +22,8 @@
 					<div class="map-header">
 						<div class="map-header-info">
 							<div id="title">@Html.DisplayFor(modelItem => item.name)</div>
-							@Html.DisplayFor(modelItem => item.ownername)
+                            <a class="LinkToProfile" asp-action="Profile" asp-controller="Home"
+							   asp-route-id="@item.ownername">@Html.DisplayFor(modelItem => item.ownername)</a>
 							<div class="player-count con-tooltip">
 								<img id="person" src="~/images/whiteperson.png" />
 								<span>@Html.DisplayFor(modelItem => item.playerCount)</span>

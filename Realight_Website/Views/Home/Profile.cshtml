@@ -1,0 +1,134 @@
+﻿@model IEnumerable<Realight_Website.Models.Player>
+
+@{
+    ViewData["Title"] = "Profile";
+}
+
+<div>
+    @foreach (var item in Model)
+    {
+        <div class="container-fluid">
+            <!--Photo + World Header-->
+            <div class="row equalheight">
+                <div class="col-1"></div>
+                <div class="details-header-container col-10">
+                    <div>
+                        <p class="details-header-content">
+                            <span style="font-size:1.5em">@Html.DisplayFor(modelItem => item.name)</span>
+                            <br />
+                            <span style="font-size:0.8em">@Html.DisplayFor(modelItem => item.status)</span>
+
+                        </p>
+                    </div>
+                </div>
+                <div class="col-1"></div>
+            </div>
+            <!--Header for the content-->
+
+            <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-6 details-container">
+                    <p>
+                        <span style="font-size:1.2em">Biography</span>
+                        <br />
+                        <br />
+                        <span>
+                            @Html.DisplayFor(modelItem => item.biography)
+                        </span>
+                    </p>
+                </div>
+                <div class="col-md-4 details-container">
+                    <p style="font-size=1.1em">Language</p>
+                    <div style="font-size=0.9em">@Html.DisplayFor(modelItem => item.language)</div>
+                    <br />
+                    <p style="font-size=1.1em">Worlds Created</p>
+                </div>
+                <div class="col-md-1"></div>
+            </div>
+            <!--Comment header-->
+            <div class="row equalheight">
+                <div class="col-1"></div>
+                <div class="col-10 comment-container">Comments</div>
+                <div class="col-1"></div>
+            </div>
+            <!--Comments-->
+            <div class="row equalheight">
+                <div class="col-1"></div>
+                <div class="col-10 comment-container">
+                    <form id="commenting" style="display: flex;">
+                        <!--Fill in with code for session state-->
+                        <input style="display:none" id="commenterName" type="text" maxlength="4096" value="DannyTestCommenter" required />
+                        <textarea class="comment-textarea" id="commentMessage" type="text" maxlength="4096" placeholder="Share your opinion!" required></textarea>
+                        <input class="postBtn" type="submit" id="btnSubmitComment" value="Post" />
+                    </form>
+                </div>
+                <div class="col-1"></div>
+            </div>
+            <!--Comment Section-->
+
+            <div class="row">
+                <div class="col-1"></div>
+                <div style="padding-bottom:15px" class="col-10 comment-container" id="commentSection">
+
+                </div>
+                <div class="col-1"></div>
+            </div>
+
+        </div>
+    }
+</div>
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-database.js"></script>
+<script>
+	// Your web app's Firebase configuration
+	// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+	var firebaseConfig = {
+		apiKey: "AIzaSyDSp5jtMKeR9jUoO7PajPrBk0f4cKe-BHg",
+		authDomain: "realight-db.firebaseapp.com",
+		databaseURL: "https://realight-db.firebaseio.com",
+		projectId: "realight-db",
+		storageBucket: "realight-db.appspot.com",
+		messagingSenderId: "328891504744",
+		appId: "1:328891504744:web:a77c1313603d55fd63c3dd",
+		measurementId: "G-FT73E57Y67"
+	};
+	// Initialize Firebase
+	firebase.initializeApp(firebaseConfig);
+
+	const rootRef = firebase.database().ref();
+
+	var id = document.getElementById("RoomID").value;
+	const commentsRef = rootRef.child('Rooms/' + id + '/comments');
+	document.getElementById("btnSubmitComment").addEventListener("click", function () {
+		var newcomment = document.getElementById('commentMessage').value.replace(/\n/g, "<br>");
+
+		var newPostRef = commentsRef.push();
+		newPostRef.set({
+			commenter: document.getElementById('commenterName').value.trim(),
+			comment: newcomment.trim()
+
+		});
+
+	});
+
+	function showpastComments() {
+		var showat = document.getElementById('commentSection');
+		var id = document.getElementById("RoomID").value;
+		const commentsRef = rootRef.child('Rooms/' + id + '/comments');
+		commentsRef.once('value', function (snapshot) {
+			snapshot.forEach(function (itemSnapshot) {
+				var itemData = itemSnapshot.val();
+				var comment = itemData.comment;
+				var commenter = itemData.commenter;
+				showat.innerHTML += '<div class="comment-section"><span style="font-size:0.9em">' + commenter + "</span><br />" + '<span style="font-size: 0.8em">' + comment + "</span></div>";
+			})
+		})
+	}
+
+	showpastComments()
+
+</script>
+
+
