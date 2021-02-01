@@ -5,7 +5,7 @@
 <div style="position:fixed; left:0; right:0;">
 	<a asp-controller="Home" asp-action="Index"></a><img class="mx-auto d-block HomepageLogo" src="~/images/realight.png" alt="Realight Logo">
 	<form asp-action="Browse" method="get">
-		<input type="text" id="searchDetails" name="SearchString" value="@ViewData["currentFilter"]" class="mx-auto d-block search-bar" placeholder="Enter your interests here" />
+		<input type="text" id="searchDetails" name="SearchString" value="@ViewData["currentFilter"]" class="mx-auto d-block search-bar searchDetails" placeholder="Enter your interests here" />
 		<br />
 		<button type="submit" value="search" id="search" class="mx-auto d-block search-button">Let's Go!</button>
 	</form>
