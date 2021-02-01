@@ -12,7 +12,8 @@ namespace Realight_Website.Models
         public string id { get; set; }
 
         //Set name max char 24 !null
-        [Display(Name = "Player Name")]
+        [Required(ErrorMessage = "Please enter a name!")]
+        [Display(Name = "User Name")]
         [MaxLength(24, ErrorMessage = "Invalid Name!")]
         public string name { get; set; }
 
@@ -33,9 +34,13 @@ namespace Realight_Website.Models
         public List<string> comments { get; set; }
 
         [Display(Name = "Worlds")]
-        public string worlds { get; set; }
+        public List<string> worlds { get; set; }
 
+        [Required(ErrorMessage = "Please enter a valid email!")]
+        [Display(Name = "Email")]
         public string email { get; set; }
+
+        [Required(ErrorMessage = "Please enter a valid password!")]
         public string password { get; set; }
 
     }

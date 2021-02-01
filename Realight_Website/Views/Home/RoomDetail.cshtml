@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<Realight_Website.Models.Room>
 
 @{
-	ViewData["Title"] = "Browse";
+	ViewData["Title"] = "RoomDetail";
 }
 
 
@@ -17,8 +17,10 @@
 						<p class="details-header-content">
 							<span style="font-size:1.5em">@Html.DisplayFor(modelItem => item.name)</span>
 							<br />
-							<span style="font-size:0.8em">created by: Danny Chan</span>
-
+                            <span style="font-size:0.8em">
+                                created by:<a class="LinkToProfile" asp-action="Profile" asp-controller="Home"
+                                asp-route-id="@item.ownername">@Html.DisplayFor(modelItem => item.ownername)</a>
+							</span>
 						</p>
 					</div>
 				</div>

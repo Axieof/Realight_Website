@@ -38,7 +38,40 @@ namespace Realight_Website.Controllers
             HttpContext.Session.SetString("HomePage", "BackgroundVideo");
             return View();
         }
-        [HttpGet]
+        public IActionResult Register()
+        {
+            return View("Register");
+        }
+        [HttpPost]
+        public async Task<ActionResult> Register(IFormCollection formData)
+        {
+            client = new FirebaseClient(config);
+            //Read inputs from textboxes
+            string name = formData["name"].ToString();
+            string email = formData["email"].ToString().ToLower();
+            string password = formData["password"].ToString();
+
+            var player = new Player
+            {
+                id = "1",
+                name = name,
+                email = email,
+                password = password
+            };
+            SetResponse response = await client.SetAsync("Player/" + "1", player);
+            Player result = response.ResultAs<Player>();
+            return View("Login");
+        }
+        public IActionResult Login()
+        {
+            return View();
+        }
+        public IActionResult Logout()
+        {
+            HttpContext.Session.Remove("User");
+            return View("Index");
+        }
+        [HttpPost]
         public ActionResult Login(IFormCollection formData)
         {
             // Read inputs from textboxes             
@@ -61,7 +94,7 @@ namespace Realight_Website.Controllers
                     {
                         if(user.password == password)
                         {
-                            HttpContext.Session.SetString("User", user.id);
+                            HttpContext.Session.SetString("User", user.name);
                         }
                     }
                 }
@@ -77,7 +110,7 @@ namespace Realight_Website.Controllers
                     }
                 }
             }
-            return View();
+            return View("Index");
         }
         [HttpGet]
         public async Task<IActionResult> Browse(string? searchString)
@@ -153,6 +186,40 @@ namespace Realight_Website.Controllers
             return View(list);
         }
 
+        [HttpGet]
+        public async Task<IActionResult> Profile(string? ownername)
+        {
+            //Use searchString as the input and use it to identify any similar interest tag
+            HttpContext.Session.SetString("HomePage", "Default");
+
+            client = new FirebaseClient(config);
+            FirebaseResponse response = client.Get("Player");
+            dynamic data = JsonConvert.DeserializeObject<dynamic>(response.Body);
+            var list = new List<Player>();
+
+            //Checking for the ID
+            if (!String.IsNullOrEmpty(ownername))
+            {
+                foreach (var item in data)
+                {
+                    Player addPlayer = JsonConvert.DeserializeObject<Player>(((JProperty)item).Value.ToString());
+                    addPlayer.id = item.id;
+                    if (addPlayer.name.Contains(ownername))
+                    {
+                        ;
+                        list.Add(addPlayer);
+                        return View(list);
+                    }
+                }
+            }
+            else
+            {
+                return View(list);
+            }
+
+
+            return View(list);
+        }
         [HttpGet]
         public async Task<IActionResult> MapList()
         {
