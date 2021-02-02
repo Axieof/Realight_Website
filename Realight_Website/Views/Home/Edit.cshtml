@@ -17,7 +17,8 @@
                             <span style="font-size:1.5em">@Html.DisplayFor(modelItem => item.name)</span>
                             <br />
                             <span style="font-size:0.8em">@Html.DisplayFor(modelItem => item.status)</span>
-
+                            <a class="EditProfile" asp-action="Edit" asp-controller="Home" name="Status"
+                               asp-route-id="@item.status">Edit Status</a>
                         </p>
                     </div>
                 </div>
@@ -30,7 +31,9 @@
                 <div class="col-md-6 details-container">
                     <p>
                         <span style="font-size:1.2em">Biography</span>
-                        <br />
+                        <a class="EditProfile" asp-action="Edit" asp-controller="Home" name="Biography">
+                            Edit Biography
+                        </a>
                         <br />
                         <span>
                             @Html.DisplayFor(modelItem => item.biography)
@@ -38,7 +41,12 @@
                     </p>
                 </div>
                 <div class="col-md-4 details-container">
-                    <p style="font-size: 1.1em">Languages</p>
+                    <p style="font-size: 1.1em">
+                        Languages 
+                        <a class="EditProfile" asp-action="Edit" asp-controller="Home" name="Languages" style="font-size: 1em">
+                            Edit Languages
+                        </a>
+                    </p>
                     @for (int i = 0; i < item.language.Count(); i++)
                     {
                         <div class="strList">@Html.DisplayFor(modelItem => item.language[i])</div>
@@ -46,6 +54,7 @@
                 </div>
                 <div class="col-md-1"></div>
             </div>
+
             <!--Worlds header-->
 			<div class="row equalheight">
 				<div class="col-1"></div>
@@ -88,7 +97,5 @@
 	// Initialize Firebase
 	firebase.initializeApp(firebaseConfig);
 
-	const rootRef = firebase.database().ref();
-
-
+    const rootRef = firebase.database().ref();
 </script>
