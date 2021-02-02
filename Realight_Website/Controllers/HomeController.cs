@@ -147,6 +147,12 @@ namespace Realight_Website.Controllers
 
             return View(list);
         }
+        [HttpPost]
+        public async Task<IActionResult> Edit(string? status, string? biography, string? language)
+        {
+
+            return View();
+        }
         [HttpGet]
         public async Task<IActionResult> Browse(string? searchString)
         {
