@@ -16,6 +16,19 @@
           "lib/netstandard1.1/Firebase.Auth.dll": {}
         }
       },
+      "FirebaseStorage.net/1.0.3": {
+        "type": "package",
+        "dependencies": {
+          "NETStandard.Library": "1.6.1",
+          "Newtonsoft.Json": "9.0.1"
+        },
+        "compile": {
+          "lib/netstandard1.1/Firebase.Storage.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.1/Firebase.Storage.dll": {}
+        }
+      },
       "FireSharp/2.0.4": {
         "type": "package",
         "dependencies": {
@@ -2027,6 +2040,18 @@
         "firebase.auth.1.0.0.nupkg.sha512",
         "firebase.auth.nuspec",
         "lib/netstandard1.1/Firebase.Auth.dll"
+      ]
+    },
+    "FirebaseStorage.net/1.0.3": {
+      "sha512": "SupDHNUwNqcVwEo/HdFEWAXveQe3fU16q4wrrCxUVwP0a77zaddKp7vo2sHIW56DAsJn/gUfjDK3w0MuBhvzjQ==",
+      "type": "package",
+      "path": "firebasestorage.net/1.0.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "firebasestorage.net.1.0.3.nupkg.sha512",
+        "firebasestorage.net.nuspec",
+        "lib/netstandard1.1/Firebase.Storage.dll"
       ]
     },
     "FireSharp/2.0.4": {
@@ -6758,6 +6783,7 @@
     ".NETCoreApp,Version=v3.1": [
       "FireSharp >= 2.0.4",
       "Firebase.Auth >= 1.0.0",
+      "FirebaseStorage.net >= 1.0.3",
       "Microsoft.AspNet.Identity.Owin >= 2.2.3",
       "Microsoft.Owin >= 4.1.0",
       "Microsoft.VisualStudio.Azure.Containers.Tools.Targets >= 1.10.9",
@@ -6765,19 +6791,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Junzhi\\.nuget\\packages\\": {}
+    "C:\\Users\\DannyChan\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Realight\\Realight_Website\\Realight_Website.csproj",
+      "projectUniqueName": "D:\\Polytechnic Stuff\\Semster 2.2\\P2\\Realight\\Realight_Website\\Realight_Website\\Realight_Website.csproj",
       "projectName": "Realight_Website",
-      "projectPath": "D:\\Realight\\Realight_Website\\Realight_Website.csproj",
-      "packagesPath": "C:\\Users\\Junzhi\\.nuget\\packages\\",
-      "outputPath": "D:\\Realight\\Realight_Website\\obj\\",
+      "projectPath": "D:\\Polytechnic Stuff\\Semster 2.2\\P2\\Realight\\Realight_Website\\Realight_Website\\Realight_Website.csproj",
+      "packagesPath": "C:\\Users\\DannyChan\\.nuget\\packages\\",
+      "outputPath": "D:\\Polytechnic Stuff\\Semster 2.2\\P2\\Realight\\Realight_Website\\Realight_Website\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Junzhi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\DannyChan\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -6789,6 +6819,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "projectReferences": {}
         }
       },
@@ -6800,6 +6831,7 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
+        "targetAlias": "netcoreapp3.1",
         "dependencies": {
           "FireSharp": {
             "target": "Package",
@@ -6808,6 +6840,10 @@
           "Firebase.Auth": {
             "target": "Package",
             "version": "[1.0.0, )"
+          },
+          "FirebaseStorage.net": {
+            "target": "Package",
+            "version": "[1.0.3, )"
           },
           "Microsoft.AspNet.Identity.Owin": {
             "target": "Package",
@@ -6844,7 +6880,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
       }
     }
   },

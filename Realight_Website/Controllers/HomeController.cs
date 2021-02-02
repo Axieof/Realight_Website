@@ -14,6 +14,10 @@ using FireSharp.Response;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Microsoft.AspNetCore.Http;
+using System.IO;
+using Firebase.Storage;
+using System.IO;
+
 
 namespace Realight_Website.Controllers
 {
@@ -220,6 +224,7 @@ namespace Realight_Website.Controllers
 
             return View(list);
         }
+        
         [HttpGet]
         public async Task<IActionResult> MapList()
         {
@@ -237,6 +242,53 @@ namespace Realight_Website.Controllers
 
             return View(list);
         }
+
+        public IActionResult UploadMap()
+        {
+            return View();
+        }
+
+        //Posting of map onto firebase storage
+        [HttpPost]
+        public async Task<IActionResult> UploadMap(Maps map)
+        {
+            
+            // full path to file in temp location
+            var filePath = Path.Combine(Directory.GetCurrentDirectory(),map.mapFile.FileName);
+            using (var stream = new FileStream(filePath, FileMode.Create))
+            {
+                await map.mapFile.CopyToAsync(stream);
+
+            }
+            using (var fileStream = new FileStream(filePath, FileMode.Open))
+            {
+                var task = new FirebaseStorage("realight-db.appspot.com")
+                .Child("maps")
+                .Child(map.mapFile.FileName)
+                .PutAsync(fileStream);
+
+                var downloadUrl = await task;
+
+                client = new FirebaseClient(config);
+                //Read inputs from textboxes
+                string mapName = map.mapName;
+                string mapMaker = map.mapMaker;
+                string mapDescription = map.description;
+
+                var mapCreation = new Maps
+                {
+                    mapName = map.mapName,
+                    mapMaker = map.mapMaker,
+                    description = map.description,
+                    downloadMapURL = downloadUrl
+                };
+                PushResponse response = await client.PushAsync("Downloadable-Map", mapCreation);
+            }
+
+            return View();
+
+
+        }
         public IActionResult Privacy()
         {
             return View();
@@ -247,5 +299,8 @@ namespace Realight_Website.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+
+        
     }
 }
