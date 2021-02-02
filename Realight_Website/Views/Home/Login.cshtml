@@ -5,28 +5,46 @@
 <body>
     <div class="row">
         <div class="col-4"></div>
-        <div style="position:fixed; left:0; right:0;" class="col-10" id="login_div">
-            <form method="post" action="~/Home/Login">
-                <fieldset class="loginFieldset">
-                    <legend>Login</legend>
-                    <label for="txtLoginID">Email Address:</label>
-                    <input type="email" name="txtLoginID" id="txtLoginID" required /><br />
+            <div style="position:fixed; left:0; right:0;" class="col-10" id="login_div">
 
-                    <label for="Password">Password:</label>
-                    <input type="password" name="Password" id="Password" style="width:100px" required />
-                    <br />
-                    <input type="submit" id="btnStaffLogin" class="loginbutton" value="Login" />
-                    <br />
-                    <span style="color:darkred;">@TempData["Message"]</span>
-
-                </fieldset>
-                <a class="nav-link" asp-controller="Home" asp-action="Register">Click here to Register!</a>
-            </form>
-        </div>
+            </div>
 
         <div class="col-1"></div>
     </div>
+    <div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-6 details-container">
+                    <form method="post" asp-action="Login" asp-controller="Home">
+                        <fieldset class="loginFieldset">
+                            <div class="box">
+                                <div class="input-wrapper">
+                                    <input type="text" id="txtLoginID" class="form-control" placeholder="Email Address" value="@ViewData["email"]" name="email">
+                                    <label for="input" class="control-label">Email Address</label>
+                                </div>
+                            </div>
 
+                            <div class="box">
+                                <div class="input-wrapper">
+                                    <input type="password" id="Password" class="form-control" placeholder="Password" value="@ViewData["password"]" name="password">
+                                    <label for="input" class="control-label">Password</label>
+                                </div>
+                            </div>
+
+                            <br />
+                            <input type="submit" id="loginbutton" class="loginbutton" value="Login" />
+                            <br />
+                            <span style="color:darkred;">@TempData["Message"]</span>
+
+                        </fieldset>
+                        <a class="nav-link" asp-controller="Home" asp-action="Register">Click here to Register!</a>
+                    </form>
+                </div>
+                <div class="col-md-1"></div>
+            </div>
+        </div>
+    </div>
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-app.js"></script>
 
@@ -34,5 +52,5 @@
          https://firebase.google.com/docs/web/setup#available-libraries -->
     <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-analytics.js"></script>
 
-    <script src="site.js"></script>
+    <script src="~/js/site.js"></script>
 </body>
