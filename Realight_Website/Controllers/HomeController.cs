@@ -72,25 +72,25 @@ namespace Realight_Website.Controllers
             return View("Index");
         }
         [HttpPost]
-        public ActionResult Login(IFormCollection formData)
+        public async Task<IActionResult> Login(string? email, string? password)
         {
             // Read inputs from textboxes             
             // Email address converted to lowercase
-            string loginID = formData["txtLoginID"].ToString().ToLower();
-            string password = formData["Password"].ToString();
+            email = email.ToLower();
+            ViewData["CurrentFilter"] = email;
 
             client = new FirebaseClient(config);
             FirebaseResponse response = client.Get("Player");
             dynamic data = JsonConvert.DeserializeObject<dynamic>(response.Body);
             var list = new List<Player>();
 
-            if (!String.IsNullOrEmpty(loginID))
+            if (!String.IsNullOrEmpty(email))
             {
                 foreach (var item in data)
                 {
                     //string roomID = item[]
                     Player user = JsonConvert.DeserializeObject<Player>(((JProperty)item).Value.ToString());
-                    if (user.email.ToLower() == loginID)
+                    if (user.email.ToLower() == email)
                     {
                         if(user.password == password)
                         {
@@ -104,7 +104,7 @@ namespace Realight_Website.Controllers
                 foreach (var item in data)
                 {
                     Player user = JsonConvert.DeserializeObject<Player>(((JProperty)item).Value.ToString());
-                    if (user.email.ToLower() == loginID)
+                    if (user.email.ToLower() == email)
                     {
                         list.Add(user);
                     }
@@ -203,7 +203,7 @@ namespace Realight_Website.Controllers
                 foreach (var item in data)
                 {
                     Player addPlayer = JsonConvert.DeserializeObject<Player>(((JProperty)item).Value.ToString());
-                    addPlayer.id = item.id;
+                    addPlayer.id = item.Name;
                     if (addPlayer.name.Contains(ownername))
                     {
                         ;

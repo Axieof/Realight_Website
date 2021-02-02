@@ -38,10 +38,8 @@
                     </p>
                 </div>
                 <div class="col-md-4 details-container">
-                    <p style="font-size=1.1em">Language</p>
-                    <div style="font-size=0.9em">@Html.DisplayFor(modelItem => item.language)</div>
                     <br />
-                    <p style="font-size=1.1em">Worlds Created</p>
+                    <p style="font-size: 1.1em">Worlds Created</p>
                 </div>
                 <div class="col-md-1"></div>
             </div>
@@ -101,33 +99,6 @@
 
 	var id = document.getElementById("RoomID").value;
 	const commentsRef = rootRef.child('Rooms/' + id + '/comments');
-	document.getElementById("btnSubmitComment").addEventListener("click", function () {
-		var newcomment = document.getElementById('commentMessage').value.replace(/\n/g, "<br>");
-
-		var newPostRef = commentsRef.push();
-		newPostRef.set({
-			commenter: document.getElementById('commenterName').value.trim(),
-			comment: newcomment.trim()
-
-		});
-
-	});
-
-	function showpastComments() {
-		var showat = document.getElementById('commentSection');
-		var id = document.getElementById("RoomID").value;
-		const commentsRef = rootRef.child('Rooms/' + id + '/comments');
-		commentsRef.once('value', function (snapshot) {
-			snapshot.forEach(function (itemSnapshot) {
-				var itemData = itemSnapshot.val();
-				var comment = itemData.comment;
-				var commenter = itemData.commenter;
-				showat.innerHTML += '<div class="comment-section"><span style="font-size:0.9em">' + commenter + "</span><br />" + '<span style="font-size: 0.8em">' + comment + "</span></div>";
-			})
-		})
-	}
-
-	showpastComments()
 
 </script>
 

@@ -1,19 +1,51 @@
-﻿<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light box-shadow mb-3 nav-color">
-	<div class="container">
-		<a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><img src="~/images/realightstar.png" alt="Logo" height="50%" width="50%" /></a>
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-				aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		</button>
-		<div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-			<ul class="navbar-nav flex-grow-1">
-				<li class="nav-item">
-					<a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Browse" asp-route-filterTag="@null">Browse</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="MapList">Download</a>
-				</li>
-			</ul>
-		</div>
-	</div>
+﻿@using Microsoft.AspNetCore.Http
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+
+<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light box-shadow mb-3 nav-color">
+    <div class="container">
+        <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><img src="~/images/realightstar.png" alt="Logo" height="50%" width="50%" /></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+            <ul class="navbar-nav flex-grow-1">
+                <li class="nav-item">
+                    <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Browse" asp-route-filterTag="@null">Browse</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="MapList">Download</a>
+                </li>
+            </ul>
+        </div>
+        <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+            @if (Context.Session.GetString("User") != null)
+            {
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" asp-controller="Home" asp-action="Profile">
+                            @HttpContextAccessor.HttpContext.Session.GetString("User")
+                        </a>
+                    </li>
+                    <li class="nav-item text-white nav-link">|</li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" asp-controller="Home" asp-action="Logout">Log out</a>
+                    </li>
+                </ul>
+            }
+            else
+            {
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" asp-controller="Home" asp-action="Login">Login</a>
+                    </li>
+                    <li class="nav-item text-white nav-link">|</li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" asp-controller="Home" asp-action="Register">Sign Up</a>
+                    </li>
+                </ul>
+            }
+
+        </div>
+    </div>
 </nav>
