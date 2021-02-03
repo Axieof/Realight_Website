@@ -21,6 +21,11 @@
 		<span asp-validation-for="mapMaker" class="text-danger"></span>
 	</div>
 	<div class="form-group">
+		<label asp-for="mapPreviews" class="control-label"></label>
+		<input type="file" asp-for="mapPreviews" class="form-control-file" multiple accept="image/*"/>
+		<span asp-validation-for="mapPreviews" class="text-danger"></span>
+	</div>
+	<div class="form-group">
 		<label asp-for="mapFile" class="control-label"></label>
 		<input asp-for="mapFile" class="form-control-file" />
 		<span asp-validation-for="mapFile" class="text-danger"></span>

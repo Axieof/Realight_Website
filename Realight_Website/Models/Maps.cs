@@ -28,8 +28,10 @@ namespace Realight_Website.Models
         
         //Set ImgUrl
         [Display(Name = "List of Map URL")]
-        [Range(0, 9999)]
         public List<string> mapPreviewURLs { get; set; }
+
+        [Display(Name = "Map File")]
+        public List<IFormFile> mapPreviews { get; set; }
 
         //Set ImgUrl
         [Display(Name = "Download URL")]
