@@ -3,20 +3,19 @@ using System.Collections.Generic;
 using System.Web;
 using System.Diagnostics;
 using System.Linq;
+using System.IO;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Http;
 using FireSharp;
 using FireSharp.Config;
-using FireSharp.Interfaces;
-using Realight_Website.Models;
 using FireSharp.Response;
+using FireSharp.Interfaces;
+using Firebase.Storage;
+using Realight_Website.Models;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using Microsoft.AspNetCore.Http;
-using System.IO;
-using Firebase.Storage;
-using System.IO;
 
 
 namespace Realight_Website.Controllers
@@ -57,13 +56,20 @@ namespace Realight_Website.Controllers
 
             var player = new Player
             {
-                id = "1",
                 name = name,
                 email = email,
-                password = password
+                password = password,
+                status = "New to Realight!",
+                biography = "Hi I'm " + name
             };
-            SetResponse response = await client.SetAsync("Player/" + "1", player);
+            PushResponse response = await client.PushAsync("Players", player);
             Player result = response.ResultAs<Player>();
+            string id = response.Result.name;
+            var newID = new Player
+            {
+                id = id
+            };
+            PushResponse update = await client.PushAsync("Players/" + "id", id);
             return View("Login");
         }
         public IActionResult Login()
@@ -81,10 +87,9 @@ namespace Realight_Website.Controllers
             // Read inputs from textboxes             
             // Email address converted to lowercase
             email = email.ToLower();
-            ViewData["CurrentFilter"] = email;
 
             client = new FirebaseClient(config);
-            FirebaseResponse response = client.Get("Player");
+            FirebaseResponse response = client.Get("Players");
             dynamic data = JsonConvert.DeserializeObject<dynamic>(response.Body);
             var list = new List<Player>();
 
@@ -92,13 +97,13 @@ namespace Realight_Website.Controllers
             {
                 foreach (var item in data)
                 {
-                    //string roomID = item[]
                     Player user = JsonConvert.DeserializeObject<Player>(((JProperty)item).Value.ToString());
                     if (user.email.ToLower() == email)
                     {
                         if(user.password == password)
                         {
                             HttpContext.Session.SetString("User", user.name);
+                            HttpContext.Session.SetString("UserID", user.id);
                         }
                     }
                 }
@@ -120,7 +125,7 @@ namespace Realight_Website.Controllers
         public IActionResult Edit()
         {
             client = new FirebaseClient(config);
-            FirebaseResponse response = client.Get("Player");
+            FirebaseResponse response = client.Get("Players");
             dynamic data = JsonConvert.DeserializeObject<dynamic>(response.Body);
             var list = new List<Player>();
 
@@ -143,15 +148,26 @@ namespace Realight_Website.Controllers
             {
                 return View(list);
             }
-
-
             return View(list);
         }
         [HttpPost]
-        public async Task<IActionResult> Edit(string? status, string? biography, string? language)
+        public async Task<ActionResult> Edit(IFormCollection formData)
         {
+            client = new FirebaseClient(config);
+            //Read inputs from textboxes
+            string status = formData["status"].ToString();
+            string biography = formData["biography"].ToString();
 
-            return View();
+            var player = new Player
+            {
+                id = HttpContext.Session.GetString("UserID"),
+                name = HttpContext.Session.GetString("User"),
+                status = status,
+                biography = biography
+            };
+            SetResponse response = await client.SetAsync("Players/" + HttpContext.Session.GetString("UserID"), player);
+            Player result = response.ResultAs<Player>();
+            return View("Index");
         }
         [HttpGet]
         public async Task<IActionResult> Browse(string? searchString)
@@ -231,7 +247,7 @@ namespace Realight_Website.Controllers
         public async Task<IActionResult> Profile(string? ownername)
         {
             client = new FirebaseClient(config);
-            FirebaseResponse response = client.Get("Player");
+            FirebaseResponse response = client.Get("Players");
             dynamic data = JsonConvert.DeserializeObject<dynamic>(response.Body);
             var list = new List<Player>();
 
@@ -244,7 +260,6 @@ namespace Realight_Website.Controllers
                     addPlayer.id = item.Name;
                     if (addPlayer.name.Contains(ownername))
                     {
-                        ;
                         list.Add(addPlayer);
                         return View(list);
                     }

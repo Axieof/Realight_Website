@@ -39,10 +39,14 @@
                 </div>
                 <div class="col-md-4 details-container">
                     <p style="font-size: 1.1em">Languages</p>
-                    @for (int i = 0; i < item.language.Count(); i++)
+                    @if (item.language != null)
                     {
-                        <div class="strList">@Html.DisplayFor(modelItem => item.language[i])</div>
+                        @for (int i = 0; i < item.language.Count(); i++)
+                        {
+                            <div class="strList">@Html.DisplayFor(modelItem => item.language[i])</div>
+                        }
                     }
+
                 </div>
                 <div class="col-md-1"></div>
             </div>
@@ -57,9 +61,12 @@
 			<div class="row">
 				<div class="col-1"></div>
                 <div style="padding-bottom:15px" class="col-10 comment-container" id="worldList">
-                    @for (int i = 0; i < item.worlds.Count(); i++)
+                    @if (item.worlds != null)
                     {
-                        <div class="comment-section"><span style="font-size:0.9em">@Html.DisplayFor(modelItem => item.worlds[i])</span></div>
+                        @for (int i = 0; i < item.worlds.Count(); i++)
+                        {
+                            <div class="comment-section"><span style="font-size:0.9em">@Html.DisplayFor(modelItem => item.worlds[i])</span></div>
+                        }
                     }
                 </div>
 				<div class="col-1"></div>
