@@ -117,6 +117,43 @@ namespace Realight_Website.Controllers
             return View("Index");
         }
         [HttpGet]
+        public IActionResult Edit()
+        {
+            client = new FirebaseClient(config);
+            FirebaseResponse response = client.Get("Player");
+            dynamic data = JsonConvert.DeserializeObject<dynamic>(response.Body);
+            var list = new List<Player>();
+
+            string currUser = HttpContext.Session.GetString("User");
+            //Checking for the ID
+            if (!String.IsNullOrEmpty(currUser))
+            {
+                foreach (var item in data)
+                {
+                    Player addPlayer = JsonConvert.DeserializeObject<Player>(((JProperty)item).Value.ToString());
+                    addPlayer.id = item.Name;
+                    if (addPlayer.name.Contains(currUser))
+                    {
+                        list.Add(addPlayer);
+                        return View(list);
+                    }
+                }
+            }
+            else
+            {
+                return View(list);
+            }
+
+
+            return View(list);
+        }
+        [HttpPost]
+        public async Task<IActionResult> Edit(string? status, string? biography, string? language)
+        {
+
+            return View();
+        }
+        [HttpGet]
         public async Task<IActionResult> Browse(string? searchString)
         {
             //Use searchString as the input and use it to identify any similar interest tag
@@ -193,9 +230,6 @@ namespace Realight_Website.Controllers
         [HttpGet]
         public async Task<IActionResult> Profile(string? ownername)
         {
-            //Use searchString as the input and use it to identify any similar interest tag
-            HttpContext.Session.SetString("HomePage", "Default");
-
             client = new FirebaseClient(config);
             FirebaseResponse response = client.Get("Player");
             dynamic data = JsonConvert.DeserializeObject<dynamic>(response.Body);

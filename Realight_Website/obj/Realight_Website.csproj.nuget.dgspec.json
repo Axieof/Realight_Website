@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Polytechnic Stuff\\Semster 2.2\\P2\\Realight\\Realight_Website\\Realight_Website\\Realight_Website.csproj": {}
+    "D:\\Realight\\Realight_Website\\Realight_Website.csproj": {}
   },
   "projects": {
-    "D:\\Polytechnic Stuff\\Semster 2.2\\P2\\Realight\\Realight_Website\\Realight_Website\\Realight_Website.csproj": {
+    "D:\\Realight\\Realight_Website\\Realight_Website.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Polytechnic Stuff\\Semster 2.2\\P2\\Realight\\Realight_Website\\Realight_Website\\Realight_Website.csproj",
+        "projectUniqueName": "D:\\Realight\\Realight_Website\\Realight_Website.csproj",
         "projectName": "Realight_Website",
-        "projectPath": "D:\\Polytechnic Stuff\\Semster 2.2\\P2\\Realight\\Realight_Website\\Realight_Website\\Realight_Website.csproj",
-        "packagesPath": "C:\\Users\\DannyChan\\.nuget\\packages\\",
-        "outputPath": "D:\\Polytechnic Stuff\\Semster 2.2\\P2\\Realight\\Realight_Website\\Realight_Website\\obj\\",
+        "projectPath": "D:\\Realight\\Realight_Website\\Realight_Website.csproj",
+        "packagesPath": "C:\\Users\\Junzhi\\.nuget\\packages\\",
+        "outputPath": "D:\\Realight\\Realight_Website\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\DannyChan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Junzhi\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -29,7 +26,6 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
-            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -41,7 +37,6 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "FireSharp": {
               "target": "Package",
@@ -90,7 +85,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
         }
       }
     }
