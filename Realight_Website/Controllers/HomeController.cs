@@ -139,10 +139,6 @@ namespace Realight_Website.Controllers
                     }
                 }
             }
-            else
-            {
-                return View(list);
-            }
             return View(list);
         }
         [HttpPost]
@@ -152,16 +148,39 @@ namespace Realight_Website.Controllers
             //Read inputs from textboxes
             string status = formData["status"].ToString();
             string biography = formData["biography"].ToString();
+            //Get player's details
+            FirebaseResponse response = client.Get("Players");
+            dynamic data = JsonConvert.DeserializeObject<dynamic>(response.Body);
+            var list = new List<Player>();
 
+            string currUser = HttpContext.Session.GetString("User");
+            //Checking for the ID
+            if (!String.IsNullOrEmpty(currUser))
+            {
+                foreach (var item in data)
+                {
+                    Player addPlayer = JsonConvert.DeserializeObject<Player>(((JProperty)item).Value.ToString());
+                    addPlayer.id = item.Name;
+                    if (addPlayer.name.Contains(currUser))
+                    {
+                        list.Add(addPlayer);
+                    }
+                }
+            }
+            //Create new player model with updated details
             var player = new Player
             {
-                id = HttpContext.Session.GetString("UserID"),
                 name = HttpContext.Session.GetString("User"),
                 status = status,
-                biography = biography
+                biography = biography,
+                email = list[0].email,
+                password = list[0].password,
+                worlds = list[0].worlds,
+                language = list[0].language
             };
-            SetResponse response = await client.SetAsync("Players/" + HttpContext.Session.GetString("UserID"), player);
-            Player result = response.ResultAs<Player>();
+            //Push changes to firebase
+            FirebaseResponse push = await client.UpdateAsync("Players/" + HttpContext.Session.GetString("UserID"), player);
+            Player result = push.ResultAs<Player>();
             return View("Index");
         }
         [HttpGet]
