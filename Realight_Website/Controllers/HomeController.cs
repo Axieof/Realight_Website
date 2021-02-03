@@ -64,12 +64,6 @@ namespace Realight_Website.Controllers
             };
             PushResponse response = await client.PushAsync("Players", player);
             Player result = response.ResultAs<Player>();
-            string id = response.Result.name;
-            var newID = new Player
-            {
-                id = id
-            };
-            PushResponse update = await client.PushAsync("Players/" + "id", id);
             return View("Login");
         }
         public IActionResult Login()
@@ -103,7 +97,8 @@ namespace Realight_Website.Controllers
                         if(user.password == password)
                         {
                             HttpContext.Session.SetString("User", user.name);
-                            HttpContext.Session.SetString("UserID", user.id);
+                            string Id = item.Name;
+                            HttpContext.Session.SetString("UserID", Id);
                         }
                     }
                 }
