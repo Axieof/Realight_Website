@@ -3,35 +3,59 @@
 @{
 	ViewData["Title"] = "Upload Map";
 }
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-1"></div>
+		<div class="col-10 upload-container" style="padding-top:15px; border-top-right-radius: 10px; border-top-left-radius: 10px; text-align: center; font-size: 1.2em;">Upload Map</div>
+		<div class="col-1"></div>
+	</div>
+	<div class="row">
+		<div class="col-1"></div>
+		<div class="col-10 upload-container" style="border-bottom-right-radius: 10px; border-bottom-left-radius: 10px;">
+			<form method="post" enctype="multipart/form-data" asp-controller="Home" asp-action="UploadMap">
+				<div class="box">
+					<div class="input-wrapper">
+						<input asp-for="mapName" placeholder="Enter your Map Name here" class="form-control" />
+						<label asp-for="mapName" class="control-label">Map Name</label>
+						<span asp-validation-for="mapName" class="text-danger"></span>
+					</div>
+				</div>
+				<div class="box">
+					<div class="input-wrapper">
+						<textarea asp-for="description" placeholder="Give your map a description" class="form-control"></textarea>
+						<span asp-validation-for="description" class="text-danger"></span>
+					</div>
+				</div>
+				<div class="box">
+					<div class="input-wrapper">
+						<input asp-for="mapMaker" class="form-control" placeholder="Enter the Map Maker Name"/>
+						<label asp-for="mapMaker" class="control-label">Map Maker Name</label>
+						<span asp-validation-for="mapMaker" class="text-danger"></span>
+					</div>
+				</div>
+				<div class="box">
+					<div class="input-wrapper">
+						<label asp-for="mapPreviews">Map Previews</label>
+						<input type="file" asp-for="mapPreviews" class="form-control-file" multiple accept="image/*" />
+						<span asp-validation-for="mapPreviews" class="text-danger"></span>
+					</div>
+				</div>
+				<div class="box">
+					<div class="input-wrapper">
+						<label asp-for="mapFile">Map File</label>
+						<input asp-for="mapFile" class="form-control-file" />
+						<span asp-validation-for="mapFile" class="text-danger"></span>
+					</div>
+				</div>
+				
+				<div class="form-group">
+					<input type="submit" value="Upload" class="btn btn-primary" />
+				</div>
+			</form>
+		</div>
+		<div class="col-1"></div>
+	</div>
+</div>
 
-<form method="post" enctype="multipart/form-data" asp-controller="Home" asp-action="UploadMap">
-	<div class="form-group">
-		<label asp-for="mapName" class="control-label"></label>
-		<input asp-for="mapName" class="form-control fieldbox" />
-		<span asp-validation-for="mapName" class="text-danger"></span>
-	</div>
-	<div class="form-group">
-		<label asp-for="description" class="control-label"></label>
-		<input asp-for="description" class="form-control fieldbox" />
-		<span asp-validation-for="description" class="text-danger"></span>
-	</div>
-	<div class="form-group">
-		<label asp-for="mapMaker" class="control-label"></label>
-		<input asp-for="mapMaker" class="form-control fieldbox" />
-		<span asp-validation-for="mapMaker" class="text-danger"></span>
-	</div>
-	<div class="form-group">
-		<label asp-for="mapPreviews" class="control-label"></label>
-		<input type="file" asp-for="mapPreviews" class="form-control-file" multiple accept="image/*"/>
-		<span asp-validation-for="mapPreviews" class="text-danger"></span>
-	</div>
-	<div class="form-group">
-		<label asp-for="mapFile" class="control-label"></label>
-		<input asp-for="mapFile" class="form-control-file" />
-		<span asp-validation-for="mapFile" class="text-danger"></span>
-	</div>
-	<div class="form-group">
-		<input type="submit" value="Upload" class="btn btn-primary" />
-	</div>
-</form>
+
 

@@ -506,3 +506,8 @@ D:\Realight\Realight_Website\obj\Debug\netcoreapp3.1\Razor\Views\Home\UploadMap.
 D:\Realight\Realight_Website\bin\Debug\netcoreapp3.1\Firebase.Storage.dll
 D:\Realight\Realight_Website\obj\Debug\netcoreapp3.1\Razor\Views\Home\_EditText.cshtml.g.cs
 D:\Realight\Realight_Website\obj\Debug\netcoreapp3.1\Realight_Website.csprojAssemblyReference.cache
+D:\Polytechnic Stuff\Semster 2.2\P2\Realight\Realight_Website\Realight_Website\bin\Debug\netcoreapp3.1\Firebase.Storage.dll
+D:\Polytechnic Stuff\Semster 2.2\P2\Realight\Realight_Website\Realight_Website\obj\Debug\netcoreapp3.1\Razor\Views\Home\Edit.cshtml.g.cs
+D:\Polytechnic Stuff\Semster 2.2\P2\Realight\Realight_Website\Realight_Website\obj\Debug\netcoreapp3.1\Razor\Views\Home\Profile.cshtml.g.cs
+D:\Polytechnic Stuff\Semster 2.2\P2\Realight\Realight_Website\Realight_Website\obj\Debug\netcoreapp3.1\Razor\Views\Home\Register.cshtml.g.cs
+D:\Polytechnic Stuff\Semster 2.2\P2\Realight\Realight_Website\Realight_Website\obj\Debug\netcoreapp3.1\Razor\Views\Home\UploadMap.cshtml.g.cs

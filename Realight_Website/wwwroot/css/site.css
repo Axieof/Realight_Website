@@ -562,3 +562,15 @@ body {
 .dropdown:hover .dropdown-content{
     display: block;
 }
+
+
+/*Upload Map Page*/
+
+.upload-container {
+    margin: 0 auto;
+    justify-content: space-evenly;
+    color: #F1F1F1;
+    background-color: #24272E;
+    padding-top: 5px;
+    
+}

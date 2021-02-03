@@ -191,6 +191,7 @@ namespace Realight_Website.Controllers
                     Room addRoom = JsonConvert.DeserializeObject<Room>(((JProperty)item).Value.ToString());
                     if (addRoom.interestTag.Contains(searchString) || addRoom.name.Contains(searchString))
 					{
+                        addRoom.RoomID = item.Name;
                         list.Add(addRoom);
 					}
                 }
