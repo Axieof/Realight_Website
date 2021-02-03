@@ -260,6 +260,61 @@ namespace Realight_Website.Controllers
                 await map.mapFile.CopyToAsync(stream);
 
             }
+            var previewDownloadURLs = new List<string>();
+            if (map.mapPreviews.Count > 4)
+            {
+                for (int i = 0; i < 4; i++)
+                {
+                    if (map.mapPreviews[i].Length > 0)
+                    {
+                        var filePathImage = Path.Combine(Directory.GetCurrentDirectory(), map.mapPreviews[i].FileName);
+
+                        using (var stream = new FileStream(filePathImage, FileMode.Create))
+                        {
+                            await map.mapPreviews[i].CopyToAsync(stream);
+
+                        }
+
+                        using (var fileStream = new FileStream(filePathImage, FileMode.Open))
+                        {
+                            var task = new FirebaseStorage("realight-db.appspot.com")
+                            .Child("mapsPreviews")
+                            .Child(map.mapPreviews[i].FileName)
+                            .PutAsync(fileStream);
+
+                            var downloadUrl = await task;
+                            previewDownloadURLs.Add(downloadUrl);
+                        }
+                    }
+                }
+            }
+            else
+            {
+                foreach (var formFile in map.mapPreviews)
+                {
+                    if (formFile.Length > 0)
+                    {
+                        var filePathImage = Path.Combine(Directory.GetCurrentDirectory(), formFile.FileName);
+                        using (var stream = new FileStream(filePathImage, FileMode.Create))
+                        {
+                            await formFile.CopyToAsync(stream);
+
+                        }
+
+                        using (var fileStream = new FileStream(filePathImage, FileMode.Open))
+                        {
+                            var task = new FirebaseStorage("realight-db.appspot.com")
+                            .Child("mapsPreviews")
+                            .Child(formFile.FileName)
+                            .PutAsync(fileStream);
+
+                            var downloadUrl = await task;
+                            previewDownloadURLs.Add(downloadUrl);
+                        }
+                    }
+                }
+            }
+
             using (var fileStream = new FileStream(filePath, FileMode.Open))
             {
                 var task = new FirebaseStorage("realight-db.appspot.com")
@@ -280,7 +335,8 @@ namespace Realight_Website.Controllers
                     mapName = map.mapName,
                     mapMaker = map.mapMaker,
                     description = map.description,
-                    downloadMapURL = downloadUrl
+                    downloadMapURL = downloadUrl,
+                    mapPreviewURLs = previewDownloadURLs
                 };
                 PushResponse response = await client.PushAsync("Downloadable-Map", mapCreation);
             }

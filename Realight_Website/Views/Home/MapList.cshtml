@@ -36,17 +36,20 @@
 				</div>
 			</div>
 			
-			<div class="Individual-Map-Details" id="Map-Details-@i" style="height:0px">
+			<div class="Individual-Map-Details" id="Map-Details-@i" style="max-height:0px">
 				
 				<div class="Content-Details">
 					<div>
 						<a href="@Html.DisplayFor(modelItem => Model.ElementAt(i).downloadMapURL)" target="_blank">Download</a>
 					</div>
 					<div class="con-sample-image">
-						<img class="sample-image" src="~/images/samplemap1.png" />
-						<img class="sample-image" src="~/images/samplemap2.png" />
-						<img class="sample-image" src="~/images/samplemap3.png" />
-						<img class="sample-image" src="~/images/samplemap4.png" />
+						@if (Model.ElementAt(i).mapPreviewURLs != null)
+						{
+							@foreach (var image in Model.ElementAt(i).mapPreviewURLs)
+							{
+								<img class="sample-image" src="@image" />
+							}
+						}
 					</div>
 					<div class="MapDescription"><p>@Html.DisplayFor(modelItem => Model.ElementAt(i).description)</p></div>
 				</div>
@@ -59,11 +62,11 @@
 <script>
 	function displayDetails(id) {
 		var MapID = document.getElementById(id)
-		if (MapID.style.height == "0px") {
-			MapID.style.height = "250px";
+		if (MapID.style.maxHeight == "0px") {
+			MapID.style.maxHeight = "250px";
 		}
 		else {
-			MapID.style.height = "0px";
+			MapID.style.maxHeight = "0px";
 		}
 	}
 </script>
