@@ -122,6 +122,7 @@ body {
 }
 
 /*Input Box CSS*/
+
 .box{
     padding-bottom: 5px;
 }
@@ -530,43 +531,55 @@ body {
 }
 
 /*Header Styling*/
-.dropdown{
-    float: left;
-    overflow: hidden;
+.navbar{
+    max-height: 70px;
 }
-
-.dropdown .dropbtn{
-    border: none;
-    outline: none;
-    color: white;
-    padding: 14px 16px;
-    background-color: inherit;
-    font-family: inherit;
+ul{
+    list-style: none;
     margin: 0;
+    padding-left: 0;
 }
 
-    /* Add a purple background color to navbar links on hover */
-    .navbar a:hover, .dropdown:hover .dropbtn {
-        background-color: rebeccapurple;
-    }
-
-.dropdown-content a{
-    float: none;
-    color: black;
-    padding: 12px 16px;
+li {
+    text-align: center;
+    max-height: 70px;
+    display: block;
+    float: left;
+    padding: 1rem;
+    position: relative;
     text-decoration: none;
-    display: block;
-    text-align: left;
+    transition-duration: 0.5s;
 }
 
-    .dropdown-content a:hover{
-    background-color: black;
+    li:hover {
+        z-index:1;
+        background-color: rebeccapurple;
+        cursor: pointer;
     }
 
-.dropdown:hover .dropdown-content{
-    display: block;
+ul li ul {
+    z-index:1;
+    visibility: hidden;
+    opacity: 0;
+    min-width: 5rem;
+    position: absolute;
+    transition: all 0.5s ease;
+    margin-top: 1rem;
+    left: 0;
+    display: none;
 }
 
+    ul li:hover > ul,
+    ul li ul:hover {
+        visibility: visible;
+        opacity: 1;
+        display: block;
+    }
+
+ul li ul li {
+    clear: both;
+    width: 100%;
+}
 
 /*Upload Map Page*/
 
