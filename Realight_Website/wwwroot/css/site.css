@@ -128,7 +128,7 @@ body {
 
 .input-wrapper {
     position: relative;
-    margin: 20px auto;
+    margin: 20px auto 0px auto;
 }
 
 .form-control {
