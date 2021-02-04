@@ -15,8 +15,19 @@ namespace Realight_Website
     {
         public static void Main(string[] args)
         {
+            //for deployment
+            /*var host = CreateWebHostBuilder(args).
+                UseKestrel().
+                UseUrls("http://0.0.0.0:" + Environment.GetEnvironmentVariable("PORT")).
+                Build();
+
+            host.Run();*/
             CreateHostBuilder(args).Build().Run();
         }
+
+        public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
+            WebHost.CreateDefaultBuilder(args)
+                .UseStartup<Startup>();
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
