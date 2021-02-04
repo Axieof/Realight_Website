@@ -17,11 +17,11 @@
                 <ul class="dropdown">
                     @if (Context.Session.GetString("User") != null)
                     {
-                        <li><a class="nav-link text-white" href="UploadMap">Upload Your Map</a></li>
+                        <li><a class="nav-link text-white"  asp-controller="Home" asp-action="UploadMap">Upload Your Map</a></li>
                     }
                     else
                     {
-                        <li><a class="nav-link text-white" href="Home/UploadMap">Upload Your Map</a></li>
+                        <li><a class="nav-link text-white"  asp-controller="Home" asp-action="UploadMap">Upload Your Map</a></li>
                     }
                     <li><a class="nav-link text-white" href="https://firebasestorage.googleapis.com/v0/b/realight-db.appspot.com/o/Realight.zip?alt=media&token=4cf36487-435d-4604-a5eb-963bb91952dd">Game Client</a></li>
                 </ul>
