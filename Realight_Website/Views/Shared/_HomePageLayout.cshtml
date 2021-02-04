@@ -19,10 +19,17 @@
             </li>
 			<li class="nav-item dropdown">
 				<a class="nav-link text-white" asp-controller="Home" asp-action="MapList">Download</a>
-				<ul class="dropdown">
-				    <li><a href="Home/UploadMap">Upload Your Map</a></li>
-				    <li><a href="https://firebasestorage.googleapis.com/v0/b/realight-db.appspot.com/o/Realight_Build.zip?alt=media&token=eebb1f0d-16ff-40ac-9444-6173ae3505bb">Game Client</a></li>
-				</ul>
+                <ul class="dropdown">
+                    @if (Context.Session.GetString("User") != null)
+                    {
+                        <li><a class="nav-link text-white" href="UploadMap">Upload Your Map</a></li>
+                    }
+                    else
+                    {
+                        <li><a class="nav-link text-white" href="Home/UploadMap">Upload Your Map</a></li>
+                    }
+                    <li><a class="nav-link text-white" href="https://firebasestorage.googleapis.com/v0/b/realight-db.appspot.com/o/Realight_Build.zip?alt=media&token=eebb1f0d-16ff-40ac-9444-6173ae3505bb">Game Client</a></li>
+                </ul>
 			</li>
         </ul>
 
