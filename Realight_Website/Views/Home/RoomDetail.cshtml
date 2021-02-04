@@ -1,4 +1,6 @@
-﻿@model IEnumerable<Realight_Website.Models.Room>
+﻿@using Microsoft.AspNetCore.Http
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+@model IEnumerable<Realight_Website.Models.Room>
 
 @{
 	ViewData["Title"] = "RoomDetail";
@@ -17,80 +19,77 @@
 						<p class="details-header-content">
 							<span style="font-size:1.5em">@Html.DisplayFor(modelItem => item.name)</span>
 							<br />
-                            <span style="font-size:0.8em">
-                                created by:<a class="LinkToProfile" asp-action="Profile" asp-controller="Home"
-                                asp-route-id="@item.ownername">@Html.DisplayFor(modelItem => item.ownername)</a>
+							<span style="font-size:0.8em">
+								created by:<a class="LinkToProfile" asp-action="Profile" asp-controller="Home"
+									  asp-route-id="@item.ownername">@Html.DisplayFor(modelItem => item.ownername)</a>
+								</span>
+							</p>
+						</div>
+					</div>
+					<div class="col-1"></div>
+				</div>
+				<!--Header for the content-->
+
+				<div class="row">
+					<div class="col-md-1"></div>
+					<div class="col-md-6 details-container">
+						<p>
+							<span style="font-size:1.2em">Description</span>
+							<br />
+							<br />
+							<span>
+								@Html.DisplayFor(modelItem => item.description)
 							</span>
 						</p>
 					</div>
-				</div>
-				<div class="col-1"></div>
-			</div>
-			<!--Header for the content-->
-
-			<div class="row">
-				<div class="col-md-1"></div>
-				<div class="col-md-6 details-container">
-					<p>
-						<span style="font-size:1.2em">Description</span>
+					<div class="col-md-4 details-container">
+						<p style="font-size:1.1em">Interest Tags</p>
+						<div class="tag-container" style="justify-content : left">
+							@for (int i = 0; i < item.interestTag.Count(); i++)
+							{
+								<div class="tag">@Html.DisplayFor(modelItem => item.interestTag[i])</div>
+							}
+						</div>
 						<br />
+						<p style="font-size=1.1em">Language</p>
+						<div style="font-size=0.9em">@Html.DisplayFor(modelItem => item.language)</div>
 						<br />
-						<span>
-							For Now This is just Sample text to fill the space
-							For Now This is just Sample text to fill the space
-							For Now This is just Sample text to fill the space
-							For Now This is just Sample text to fill the space
-						</span>
-					</p>
-				</div>
-				<div class="col-md-4 details-container">
-					<p style="font-size:1.1em">Interest Tags</p>
-					<div class="tag-container" style="justify-content : left">
-						@for (int i = 0; i < item.interestTag.Count(); i++)
-						{
-							<div class="tag">@Html.DisplayFor(modelItem => item.interestTag[i])</div>
-						}
+						<p>Rating : @Html.DisplayFor(modelItem => item.age)</p>
 					</div>
-					<br />
-					<p style="font-size=1.1em">Language</p>
-                    <div style="font-size=0.9em">@Html.DisplayFor(modelItem => item.language)</div>
-					<br />
-					<p>Rating : @Html.DisplayFor(modelItem => item.age)</p>
+					<div class="col-md-1"></div>
 				</div>
-				<div class="col-md-1"></div>
-			</div>
-			<!--Comment header-->
-			<div class="row equalheight">
-				<div class="col-1"></div>
-				<div class="col-10 comment-container">Comments</div>
-				<div class="col-1"></div>
-			</div>
-			<!--Comments-->
-			<div class="row equalheight">
-				<div class="col-1"></div>
-				<div class="col-10 comment-container">
-					<form id="commenting" style="display: flex;">
-						<!--Fill in with code for session state-->
-						<input style="display:none" id="RoomID" type="text" maxlength="4096" value="@item.RoomID" required />
-						<input style="display:none" id="commenterName" type="text" maxlength="4096" value="DannyTestCommenter" required />
-						<textarea class="comment-textarea" id="commentMessage" type="text" maxlength="4096" placeholder="Share your opinion!" required></textarea>
-						<input class="postBtn" type="submit" id="btnSubmitComment" value="Post" />
-					</form>
+				<!--Comment header-->
+				<div class="row equalheight">
+					<div class="col-1"></div>
+					<div class="col-10 comment-container">Comments</div>
+					<div class="col-1"></div>
 				</div>
-				<div class="col-1"></div>
-			</div>
-			<!--Comment Section-->
-			
-			<div class="row">
-				<div class="col-1"></div>
-				<div  style="padding-bottom:15px" class="col-10 comment-container" id="commentSection">
+				<!--Comments-->
+				<div class="row equalheight">
+					<div class="col-1"></div>
+					<div class="col-10 comment-container">
+						<form id="commenting" style="display: flex;">
+							<!--Fill in with code for session state-->
+							<input style="display:none" id="RoomID" type="text" maxlength="4096" value="@item.RoomID" required />
+							<input style="display:none" id="commenterName" type="text" maxlength="4096" value="@Context.Session.GetString("User")" required />
+							<textarea class="comment-textarea" id="commentMessage" type="text" maxlength="4096" placeholder="Share your opinion!" required></textarea>
+							<input class="postBtn" type="submit" id="btnSubmitComment" value="Post" />
+						</form>
+					</div>
+					<div class="col-1"></div>
+				</div>
+				<!--Comment Section-->
 
+				<div class="row">
+					<div class="col-1"></div>
+					<div style="padding-bottom:15px" class="col-10 comment-container" id="commentSection">
+
+					</div>
+					<div class="col-1"></div>
 				</div>
-				<div class="col-1"></div>
+
 			</div>
-			
-		</div>
-	}
+		}
 </div>
 
 <!-- The core Firebase JS SDK is always required and must be listed first -->

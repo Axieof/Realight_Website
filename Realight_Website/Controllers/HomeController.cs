@@ -405,7 +405,7 @@ namespace Realight_Website.Controllers
                 PushResponse response = await client.PushAsync("Downloadable-Map", mapCreation);
             }
 
-            return View();
+            return View("index");
 
 
         }
