@@ -1,5 +1,4 @@
 ![realight_header](https://github.com/user-attachments/assets/e293a335-43f8-40ab-b81b-5f2f2c45304e)
-Project Overview (Team)
 # 1.	Introduction to challenge statement
 
 Portfolio 2 and Full-stack development are modules that go hand in hand - requiring us to work on a single project as assignments of both modules. During our first Portfolio 2 lesson, we were presented with 5 challenge statements and were given the option to choose the challenge statement we were confident in pursuing
@@ -23,6 +22,12 @@ Our next idea was to implement a social media application that would bring users
 The final solution we decided on was Realight. Realight was a combination of our previous ideas, by taking the best parts of them and putting them together and making them work together well. One important decision we had to make early on was whether to develop a social media application or game, as we had interest in doing both, but had not much game making experience.
 
 Thus we ultimately decided to split Project Realight into 2 parts, a website that would serve as social media location where users could interact with each other through online chat, and a game which would be the main part of Project Realight, where users will meet up with friends and family to do anything they want with the tools provided, thus our slogan ‘A blank reality, make it yours’, suggesting to our users that they have all the power to do anything creatively as they will, and that we would not limit the user to make their world anything they want it to be.
+
+![Homepage](https://github.com/user-attachments/assets/57cc290f-1f13-4cf4-b495-93d54442d10a)
+![Browse Worlds](https://github.com/user-attachments/assets/89757ffc-b93e-4964-85cb-ee3c43368ce4)
+![World Page](https://github.com/user-attachments/assets/4fbc7f75-0093-46bf-9683-6b503b8e133f)
+![profile Page](https://github.com/user-attachments/assets/2b3ef634-f519-460c-b05a-1d471b4f46ff)
+
 
 # 4. Project Management
 To manage the different user stories and tasks allocated for the project, a Trello board was created. The board allowed us to view all our tasks and organize them neatly. Multiple tabs were created, each for a different use, and user stories and tasks were shifted across the tabs to track the progress of each task and its development. To allocate the priority and the difficulty of each task, a point-based system was implemented, with each user story being assigned a point based on its importance and difficulty. 
